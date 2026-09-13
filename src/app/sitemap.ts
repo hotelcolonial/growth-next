@@ -89,5 +89,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     : now;
   const blogIndex = entriesFor('/blog', ultimoPost, 'weekly', 0.6);
 
-  return [...home, ...cases, ...blogIndex, ...posts];
+  // --- Legal --------------------------------------------------------------
+  const privacidade = entriesFor('/privacidade', now, 'yearly', 0.3);
+
+  return [...home, ...cases, ...blogIndex, ...posts, ...privacidade];
 }

@@ -113,3 +113,8 @@
 .footer-nav-right{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
 .footer-legal{margin-top:clamp(36px,4vw,56px);padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-family:"HelveticaNeueCyr","Inter","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:400;font-size:12px;letter-spacing:-0.01em;color:var(--fg-subtle);text-transform:lowercase;}
 @media(max-width:720px){.footer-nav-right .nav-pill-label{display:none;}}
+
+/* El enlace a la política hereda el aspecto de los <span> vecinos del
+   footer-legal; solo se subraya al pasar por encima. */
+.footer-privacy { color: inherit; }
+.footer-privacy:hover { color: var(--fg); text-decoration: underline; text-underline-offset: 3px; }

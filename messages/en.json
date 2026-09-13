@@ -225,7 +225,8 @@
     "errorTitle": "something went wrong",
     "errorText": "we could not send your message right now. please try again in a moment.",
     "retry": "try again",
-    "requiredFields": "please fill in your name and your contact to continue."
+    "requiredFields": "please fill in your name and your contact to continue.",
+    "consent": "By submitting, you agree to our <link>Privacy Policy</link>."
   },
   "NotFound": {
     "eyebrow": "error 404",
@@ -233,5 +234,50 @@
     "subtitle": "The address you tried to reach does not exist or has been moved. Nothing is lost: head back to the homepage and continue from there.",
     "backHome": "back to homepage",
     "backBlog": "see the blog"
+  },
+  "Privacy": {
+    "metaTitle": "Privacy Policy",
+    "metaDescription": "How Growth Hotel Solutions handles the personal data collected on this site, under Brazil’s LGPD (Law No. 13,709/2018).",
+    "eyebrow": "privacy",
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: September 13, 2026",
+    "intro": "Growth Hotel Solutions provides outsourced commercial operations for hotels in Brazil. This policy explains, plainly, what personal data we process on this site, what we use it for, and what your rights are under Brazil’s General Data Protection Law (Law No. 13,709/2018 — LGPD).",
+    "s1Title": "What data we collect",
+    "s1Intro": "This site collects personal data at a single point: the “let’s talk” contact form. The data is what you enter yourself:",
+    "s1Items": [
+      "Name — the name you type into the form.",
+      "Contact channel — how you choose to reach us: WhatsApp, Instagram, Telegram or e-mail.",
+      "Contact details — the number, username or e-mail address for the channel you chose."
+    ],
+    "s1Outro": "We do not ask for tax IDs, addresses, payment details or any category of sensitive personal data. Outside that form, the site neither requests nor stores personal data.",
+    "s2Title": "What we use it for",
+    "s2Body": "Solely to reply to you and schedule the commercial diagnosis you requested. We do not use this data for unsolicited marketing, and we do not sell, rent or trade it with third parties for commercial purposes.",
+    "s3Title": "Legal basis for processing",
+    "s3Body": "Processing of form data rests on the data subject’s consent (LGPD art. 7, I): you freely choose to fill in and submit the form so that we contact you. Should we adopt audience analytics tools, processing may rest on legitimate interest (art. 7, IX) or on consent, as applicable and always on an informed basis.",
+    "s4Title": "Who we share it with",
+    "s4Intro": "Data submitted through the form is recorded in a Google Sheet. The submission is sent from our own server, not from your browser.",
+    "s4Body": "This means Google acts as a processor of that data and that it may be stored on servers located outside Brazil. Such international transfer takes place under LGPD arts. 33 and following. There are no other recipients: we do not share your data with partners, advertisers or ad networks.",
+    "s5Title": "How long we keep it",
+    "s5Body": "We keep form data for as long as needed to handle your enquiry and, where a commercial relationship exists, for the period required by applicable law. You may request deletion at any time via the e-mail below.",
+    "s6Title": "Security",
+    "s6Body": "The form is submitted over an encrypted connection (HTTPS) and processed on the server, not in the browser. Access to the sheet where data is recorded is restricted to the Growth Hotel Solutions team. No system is infallible, but we apply reasonable measures proportionate to the volume and nature of the data processed.",
+    "s7Title": "Cookies and analytics",
+    "s7Body": "This site does not currently use analytics cookies or audience measurement tools. We may adopt Google Analytics or an equivalent solution to understand how the site is used and improve it. If that happens, this policy will be updated and, where required, a cookie notice with the option to decline will be shown.",
+    "s8Title": "Your rights as a data subject",
+    "s8Intro": "The LGPD grants you, as the data subject, the following rights:",
+    "s8Items": [
+      "Confirmation that we process your data, and access to it.",
+      "Correction of incomplete, inaccurate or outdated data.",
+      "Anonymisation, blocking or deletion of data that is unnecessary or processed unlawfully.",
+      "Portability of your data to another provider, upon express request.",
+      "Deletion of data processed on the basis of your consent.",
+      "Information about the entities with which we share your data.",
+      "Withdrawal of consent at any time."
+    ],
+    "s9Title": "How to exercise your rights",
+    "s9Body": "Write to <mail></mail>. We will reply as soon as we can. For your protection, we may ask for additional information confirming your identity before acting on the request.",
+    "s10Title": "Changes to this policy",
+    "s10Body": "We may update this policy to reflect changes to the site or to the law. The last-updated date at the top of this page always indicates the version in force.",
+    "email": "contato@growthhotelsolutions.com.br"
   }
 }

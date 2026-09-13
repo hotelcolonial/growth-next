@@ -225,7 +225,8 @@
     "errorTitle": "algo deu errado",
     "errorText": "não conseguimos enviar seu contato agora. tente novamente em instantes.",
     "retry": "tentar novamente",
-    "requiredFields": "preencha seu nome e seu contato para continuar."
+    "requiredFields": "preencha seu nome e seu contato para continuar.",
+    "consent": "Ao enviar, você concorda com nossa <link>Política de Privacidade</link>."
   },
   "NotFound": {
     "eyebrow": "erro 404",
@@ -233,5 +234,50 @@
     "subtitle": "O endereço que você tentou acessar não existe ou foi movido. Nada se perdeu: volte para o início e siga a partir daí.",
     "backHome": "voltar ao início",
     "backBlog": "ver o blog"
+  },
+  "Privacy": {
+    "metaTitle": "Política de Privacidade",
+    "metaDescription": "Como a Growth Hotel Solutions trata os dados pessoais coletados neste site, com base na LGPD (Lei nº 13.709/2018).",
+    "eyebrow": "privacidade",
+    "title": "Política de Privacidade",
+    "lastUpdated": "Última atualização: 13 de setembro de 2026",
+    "intro": "A Growth Hotel Solutions atua com terceirização comercial para hotéis no Brasil. Esta política explica, de forma direta, quais dados pessoais tratamos neste site, para que os usamos e quais são os seus direitos segundo a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).",
+    "s1Title": "Quais dados coletamos",
+    "s1Intro": "Este site coleta dados pessoais em um único ponto: o formulário de contato «vamos conversar». Os dados são os que você mesmo informa:",
+    "s1Items": [
+      "Nome — o nome que você digita no formulário.",
+      "Canal de contato — o meio que você escolhe para falar conosco: WhatsApp, Instagram, Telegram ou e-mail.",
+      "Contato — o número, usuário ou endereço de e-mail correspondente ao canal escolhido."
+    ],
+    "s1Outro": "Não solicitamos CPF, endereço, dados de pagamento nem qualquer categoria de dado pessoal sensível. Fora desse formulário, o site não pede nem armazena dados pessoais.",
+    "s2Title": "Para que usamos esses dados",
+    "s2Body": "Exclusivamente para responder ao seu contato e agendar o diagnóstico comercial que você solicitou. Não usamos esses dados para comunicações de marketing não solicitadas, e não os vendemos, cedemos nem trocamos com terceiros para fins comerciais.",
+    "s3Title": "Base legal do tratamento",
+    "s3Body": "O tratamento dos dados do formulário se apoia no consentimento do titular (art. 7º, I, da LGPD): você decide livremente preencher e enviar o formulário para que entremos em contato. Caso venhamos a utilizar ferramentas de análise de audiência, o tratamento poderá se apoiar no legítimo interesse (art. 7º, IX) ou no consentimento, conforme o caso e sempre de forma informada.",
+    "s4Title": "Com quem compartilhamos",
+    "s4Intro": "Os dados enviados pelo formulário são registrados em uma planilha do Google (Google Sheets). O envio parte do nosso próprio servidor, e não do seu navegador.",
+    "s4Body": "Isso significa que o Google atua como operador desses dados e que eles podem ficar armazenados em servidores localizados fora do Brasil. Essa transferência internacional ocorre nos termos dos arts. 33 e seguintes da LGPD. Não há outros destinatários: não compartilhamos seus dados com parceiros, anunciantes ou redes de publicidade.",
+    "s5Title": "Por quanto tempo guardamos",
+    "s5Body": "Mantemos os dados do formulário pelo tempo necessário para atender ao seu contato e, havendo relação comercial, pelo prazo exigido pela legislação aplicável. Você pode solicitar a exclusão a qualquer momento pelo e-mail indicado abaixo.",
+    "s6Title": "Segurança",
+    "s6Body": "O envio do formulário é feito por conexão criptografada (HTTPS) e processado no servidor, não no navegador. O acesso à planilha onde os dados são registrados é restrito à equipe da Growth Hotel Solutions. Nenhum sistema é infalível, mas adotamos medidas razoáveis e compatíveis com o volume e a natureza dos dados tratados.",
+    "s7Title": "Cookies e análise de audiência",
+    "s7Body": "Hoje este site não utiliza cookies de análise nem ferramentas de medição de audiência. Podemos vir a utilizar o Google Analytics ou solução equivalente para entender como o site é usado e melhorá-lo. Se isso acontecer, esta política será atualizada e, quando exigido, será apresentado um aviso de cookies com a possibilidade de recusa.",
+    "s8Title": "Seus direitos como titular",
+    "s8Intro": "A LGPD garante a você, como titular dos dados, os seguintes direitos:",
+    "s8Items": [
+      "Confirmação de que tratamos seus dados e acesso a eles.",
+      "Correção de dados incompletos, inexatos ou desatualizados.",
+      "Anonimização, bloqueio ou eliminação de dados desnecessários ou tratados em desconformidade com a lei.",
+      "Portabilidade dos dados a outro fornecedor, mediante requisição expressa.",
+      "Eliminação dos dados tratados com base no seu consentimento.",
+      "Informação sobre as entidades com as quais compartilhamos seus dados.",
+      "Revogação do consentimento a qualquer momento."
+    ],
+    "s9Title": "Como exercer seus direitos",
+    "s9Body": "Escreva para <mail></mail>. Responderemos no menor prazo possível. Para sua segurança, podemos solicitar informações adicionais que confirmem a sua identidade antes de atender ao pedido.",
+    "s10Title": "Alterações nesta política",
+    "s10Body": "Podemos atualizar esta política para refletir mudanças no site ou na legislação. A data de última atualização, no topo desta página, indica sempre a versão vigente.",
+    "email": "contato@growthhotelsolutions.com.br"
   }
 }

@@ -55,11 +55,24 @@ export default async function LocaleLayout({
     <html lang={locale} data-loader-seen="0" suppressHydrationWarning>
       <head>
         {/*
-          Va en <head> para ejecutarse durante el parseo del HTML, antes del
-          primer paint: quien ya vio el preloader no llega a ver ni un
-          fotograma. El try/catch cubre navegadores o modos donde
-          sessionStorage esta bloqueado (ahi el preloader simplemente se
-          muestra, y se retira solo por CSS).
+          Se ejecuta durante el parseo del HTML, antes del primer paint: quien
+          ya vio el preloader no llega a ver ni un fotograma. El try/catch cubre
+          navegadores o modos donde sessionStorage esta bloqueado (ahi el
+          preloader simplemente se muestra, y se retira solo por CSS).
+
+          Tiene que ser un <script> suelto, NO next/script: con
+          strategy="beforeInteractive" Next no lo inlinea, lo encola en
+          self.__next_s y lo ejecuta su runtime DESPUES del primer paint, con lo
+          que el preloader vuelve a parpadear. Aqui hace falta un script que
+          bloquee el parseo, que es justo lo que documenta Next en la guia
+          "Preventing flash before hydration".
+
+          Efecto secundario conocido: al cambiar de idioma se remonta el
+          segmento [locale] y React re-renderiza este arbol en cliente, donde
+          avisa "Encountered a script tag while rendering React component". Es
+          un aviso de desarrollo y aqui es inocuo: el script solo tiene sentido
+          en una carga completa de pagina, y en un cambio de idioma
+          sessionStorage ya esta puesto y el preloader ya se retiro.
         */}
         <script
           dangerouslySetInnerHTML={{

@@ -459,3 +459,13 @@
 .cm-submit:disabled { opacity: 0.7; cursor: progress; }
 /* Congela el hover mientras se envía para que el botón no "salte" de color. */
 .cm-submit:disabled:hover { background: #F95738; color: var(--on-accent); }
+
+/* Aviso de consentimiento bajo el botón de envío del formulario. */
+.cm-consent {
+  margin-top: 14px;
+  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400; font-size: 12.5px; line-height: 1.45; letter-spacing: -0.01em;
+  color: var(--fg-muted); text-align: center;
+}
+.cm-consent a { color: var(--fg); border-bottom: 1px solid #F95738; }
+.cm-consent a:hover { color: #F95738; }

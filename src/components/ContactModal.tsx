@@ -1,6 +1,7 @@
 'use client';
 import {useState, useEffect, type FormEvent} from 'react';
 import {useTranslations} from 'next-intl';
+import {Link as LocaleLink} from '@/i18n/navigation';
 
 type Status = 'idle' | 'sending' | 'error';
 
@@ -225,6 +226,18 @@ export default function ContactModal() {
                 </span>
               </span>
             </button>
+
+            {/* Aviso de consentimiento: el formulario recoge datos personales
+                (nome, canal, contato) y la LGPD pide que se informe donde. */}
+            <p className="cm-consent">
+              {t.rich('consent', {
+                link: (chunks) => (
+                  <LocaleLink href="/privacidade" onClick={() => setOpen(false)}>
+                    {chunks}
+                  </LocaleLink>
+                )
+              })}
+            </p>
           </form>
         ) : (
           <div className="cm-thanks" role="status" aria-live="polite">

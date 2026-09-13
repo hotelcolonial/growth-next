@@ -1,0 +1,103 @@
+.pv-page {
+  padding: clamp(140px, 20vh, 240px) 0 clamp(80px, 12vw, 160px);
+}
+.pv-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(14px, 1.8vw, 22px);
+  /* Mismo ancho que el cuerpo, para que el titulo no se despegue del texto. */
+  max-width: 72ch;
+}
+.pv-title {
+  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: clamp(36px, 5.6vw, 84px);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  text-transform: lowercase;
+  color: var(--fg);
+}
+.pv-updated {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-subtle);
+}
+.pv-intro {
+  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: clamp(17px, 1.6vw, 22px);
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+  max-width: 66ch;
+  margin-top: clamp(8px, 1vw, 14px);
+}
+
+/* Cuerpo: ancho de lectura corto a proposito (66ch), que es lo comodo para
+   texto legal largo. */
+.pv-body {
+  max-width: 72ch;
+  margin-top: clamp(48px, 7vw, 88px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(36px, 5vw, 60px);
+}
+.pv-section {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.2vw, 16px);
+}
+.pv-section h2 {
+  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: clamp(21px, 2.2vw, 30px);
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  color: var(--fg);
+}
+/* Filete coral corto sobre cada titulo, el mismo gesto que .eyebrow. */
+.pv-section h2::before {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--accent);
+  margin-bottom: clamp(12px, 1.4vw, 18px);
+}
+.pv-section p {
+  font-size: clamp(15px, 1.25vw, 17px);
+  line-height: 1.65;
+  color: var(--fg-muted);
+  max-width: 66ch;
+}
+.pv-section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 66ch;
+}
+.pv-section li {
+  position: relative;
+  padding-left: 22px;
+  font-size: clamp(15px, 1.25vw, 17px);
+  line-height: 1.6;
+  color: var(--fg-muted);
+}
+.pv-section li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 8px;
+  height: 1px;
+  background: var(--accent);
+}
+.pv-section a {
+  color: var(--fg);
+  border-bottom: 1px solid var(--accent);
+  transition: color 0.3s ease;
+}
+.pv-section a:hover { color: var(--accent); }

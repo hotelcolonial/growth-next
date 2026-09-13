@@ -266,7 +266,10 @@ export default function Footer() {
         </div>
         <div className="footer-legal">
           <span>{t('copyright', {year: new Date().getFullYear()})}</span>
-          <span>{t('privacy')}</span>
+          {/* Era un <span> muerto: ahora enlaza a la pagina real. */}
+          <LocaleLink href="/privacidade" className="footer-privacy" data-hover>
+            {t('privacy')}
+          </LocaleLink>
           <span>{t('location')}</span>
         </div>
       </div>
