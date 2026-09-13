@@ -171,7 +171,9 @@
   },
   "Meta": {
     "homeTitle": "Terceirização comercial para hotéis",
-    "homeDescription": "Operação comercial completa para hotéis: revenue, distribuição, conteúdo, performance e central de reservas. Mais reservas diretas, menos dependência das OTAs."
+    "homeDescription": "Operação comercial completa para hotéis: revenue, distribuição, conteúdo, performance e central de reservas. Mais reservas diretas, menos dependência das OTAs.",
+    "ogTitle": "terceirização comercial para hotéis",
+    "ogSubtitle": "Revenue, distribuição, marketing e central de reservas — a operação comercial completa do seu hotel."
   },
   "Footer": {
     "ctaEyebrow": "vamos conversar",

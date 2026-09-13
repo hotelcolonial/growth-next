@@ -28,7 +28,6 @@ export async function generateMetadata({
     path: `/blog/${slug}`,
     title: p.frontmatter.title,
     description: p.frontmatter.description || '',
-    image: p.frontmatter.coverImage,
     type: 'article'
   });
 }

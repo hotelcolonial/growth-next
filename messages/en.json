@@ -171,7 +171,9 @@
   },
   "Meta": {
     "homeTitle": "Commercial outsourcing for hotels",
-    "homeDescription": "Complete commercial operation for hotels: revenue, distribution, content, performance and reservations center. More direct bookings, less dependence on OTAs."
+    "homeDescription": "Complete commercial operation for hotels: revenue, distribution, content, performance and reservations center. More direct bookings, less dependence on OTAs.",
+    "ogTitle": "outsourced sales for hotels",
+    "ogSubtitle": "Revenue, distribution, marketing and a booking desk — your hotel’s complete commercial operation."
   },
   "Footer": {
     "ctaEyebrow": "let's talk",

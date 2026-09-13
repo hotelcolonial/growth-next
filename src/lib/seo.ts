@@ -9,7 +9,11 @@ export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3
 export const ALLOW_INDEXING = process.env.NEXT_PUBLIC_ALLOW_INDEXING === 'true';
 
 const BRAND = 'Growth Hotel Solutions';
-const DEFAULT_OG_IMAGE = '/logo-growth-transparente.png';
+// Logo de marca en PNG. Ya NO es la imagen Open Graph —de eso se encargan los
+// opengraph-image.tsx con next/og—; su unico papel ahora es el `logo` de los
+// datos estructurados JSON-LD, donde Google recomienda un formato clasico.
+// El generador de OG usa su propia copia en assets/og/logo.png.
+const BRAND_LOGO = '/logo-growth-transparente.png';
 
 const OG_LOCALES: Record<string, string> = {pt: 'pt_BR', es: 'es_ES', en: 'en_US'};
 const BCP47: Record<string, string> = {pt: 'pt-BR', es: 'es', en: 'en'};
@@ -38,13 +42,15 @@ export function buildPageMetadata(opts: {
   path: string; // path WITHOUT the locale prefix, e.g. '' | '/blog' | '/blog/foo' | '/cases/foo'
   title: string; // page-specific part; the layout template appends " — Growth Hotel Solutions"
   description: string;
-  image?: string;
   type?: 'website' | 'article';
 }): Metadata {
-  const {locale, path, title, description, image, type = 'website'} = opts;
+  const {locale, path, title, description, type = 'website'} = opts;
   const alt = alternates(locale, path);
-  const img = absUrl(image || DEFAULT_OG_IMAGE);
   const fullTitle = `${title} — ${BRAND}`;
+  // Sin `images` a proposito: las imagenes Open Graph las generan los archivos
+  // opengraph-image.tsx con next/og, y Next inyecta solos og:image, su tipo,
+  // ancho, alto y twitter:image. Si aqui se declararan, pisarian esa
+  // convencion y volveriamos al logo suelto.
   return {
     title,
     description,
@@ -56,14 +62,12 @@ export function buildPageMetadata(opts: {
       siteName: BRAND,
       locale: ogLocale(locale),
       title: fullTitle,
-      description,
-      images: [{url: img, alt: fullTitle}]
+      description
     },
     twitter: {
       card: 'summary_large_image',
       title: fullTitle,
-      description,
-      images: [img]
+      description
     }
   };
 }
@@ -75,7 +79,7 @@ export function organizationJsonLd() {
     '@type': 'Organization',
     name: BRAND,
     url: SITE_URL,
-    logo: `${SITE_URL}${DEFAULT_OG_IMAGE}`,
+    logo: `${SITE_URL}${BRAND_LOGO}`,
     description:
       'Terceirização comercial para hotéis: revenue, distribuição, conteúdo, performance e central de reservas.',
     knowsLanguage: ['pt-BR', 'es', 'en']
@@ -93,7 +97,7 @@ export function blogJsonLd(opts: {locale: string; url: string; description: stri
     publisher: {
       '@type': 'Organization',
       name: BRAND,
-      logo: {'@type': 'ImageObject', url: `${SITE_URL}${DEFAULT_OG_IMAGE}`}
+      logo: {'@type': 'ImageObject', url: `${SITE_URL}${BRAND_LOGO}`}
     }
   };
 }
@@ -113,7 +117,7 @@ export function articleJsonLd(opts: {
     '@type': type,
     headline,
     description,
-    image: [absUrl(image || DEFAULT_OG_IMAGE)],
+    image: [absUrl(image || BRAND_LOGO)],
     inLanguage: bcp47(locale),
     url,
     ...(datePublished ? {datePublished} : {}),
@@ -121,7 +125,7 @@ export function articleJsonLd(opts: {
     publisher: {
       '@type': 'Organization',
       name: BRAND,
-      logo: {'@type': 'ImageObject', url: `${SITE_URL}${DEFAULT_OG_IMAGE}`}
+      logo: {'@type': 'ImageObject', url: `${SITE_URL}${BRAND_LOGO}`}
     }
   };
 }

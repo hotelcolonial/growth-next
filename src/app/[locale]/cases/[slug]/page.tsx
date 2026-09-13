@@ -28,7 +28,6 @@ export async function generateMetadata({
     path: `/cases/${slug}`,
     title: c.frontmatter.title,
     description: c.frontmatter.description,
-    image: c.frontmatter.coverImage,
     type: 'article'
   });
 }
