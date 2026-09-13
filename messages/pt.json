@@ -116,8 +116,7 @@
     "metodo": "Método",
     "planos": "Planos",
     "contato": "Contato",
-    "cases": "Cases",
-    "telefoneLabel": "Ligar para 0800 819 1993"
+    "cases": "Cases"
   },
   "Work": {
     "pill": "Ver mais detalhes",
@@ -201,8 +200,7 @@
     "topLabel": "TOPO",
     "copyright": "© {year} Growth Hotel Solutions",
     "privacy": "Política de Privacidade",
-    "location": "Hotelaria · Brasil",
-    "telefoneLabel": "Ligar para 0800 819 1993"
+    "location": "Hotelaria · Brasil"
   },
   "Contact": {
     "closeLabel": "Fechar",

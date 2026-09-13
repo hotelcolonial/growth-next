@@ -116,8 +116,7 @@
     "metodo": "Método",
     "planos": "Planes",
     "contato": "Contacto",
-    "cases": "Cases",
-    "telefoneLabel": "Llamar al 0800 819 1993"
+    "cases": "Cases"
   },
   "Work": {
     "pill": "Ver más detalles",
@@ -201,8 +200,7 @@
     "topLabel": "ARRIBA",
     "copyright": "© {year} Growth Hotel Solutions",
     "privacy": "Política de Privacidad",
-    "location": "Hotelería · Brasil",
-    "telefoneLabel": "Llamar al 0800 819 1993"
+    "location": "Hotelería · Brasil"
   },
   "Contact": {
     "closeLabel": "Cerrar",
