@@ -49,7 +49,7 @@
           line-height: 0.95; letter-spacing: -0.045em;
           text-transform: lowercase; color: var(--fg);
         }
-        .pack-card-hot .pack-name { color: #F95738; }
+        .pack-card-hot .pack-name { color: var(--accent-text); }
         .pack-flame { display: inline-block; vertical-align: middle; margin-left: 10px; }
         .pack-flame svg { width: clamp(20px, 2vw, 30px); height: auto; fill: #F95738; display: inline-block; vertical-align: middle; }
         .pack-desc {
@@ -66,7 +66,7 @@
         .pack-prefix {
           font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
           font-weight: 400; font-size: clamp(14px, 1vw, 15px);
-          letter-spacing: -0.02em; color: #F95738;
+          letter-spacing: -0.02em; color: var(--accent-text);
           text-transform: lowercase;
           margin-top: -2px;
         }
@@ -77,7 +77,7 @@
           text-transform: lowercase;
           display: flex; align-items: flex-start; gap: 10px;
         }
-        .pack-check { color: #F95738; flex-shrink: 0; }
+        .pack-check { color: var(--accent-text); flex-shrink: 0; }
         .pack-fact-no { color: var(--fg-subtle); }
         .pack-x { color: var(--fg-subtle); flex-shrink: 0; }
         .pack-obj {
@@ -92,7 +92,12 @@
           display: flex; flex-direction: column; align-items: center;
           gap: 4px;
           text-align: center;
-          background: #F95738; color: var(--on-accent);
+          /* Excepcion deliberada: la linea inferior ("e receba uma proposta
+             comercial", 31 caracteres) no se puede agrandar a 19px/700 sin
+             igualarla a la principal y romper la jerarquia del boton. Se usa el
+             coral oscuro de la paleta: 4.79:1 con blanco, cumple AA sin tocar
+             tamanos. Es el unico boton con este coral. */
+          background: var(--accent-deep); color: var(--on-accent);
           border-radius: 999px;
           padding: 20px 28px;
           transition: background 0.4s var(--ease-out-cubic), color 0.4s var(--ease-out-cubic);
@@ -125,8 +130,9 @@
         .pack-arrow svg { display: block; width: 100%; height: 100%; }
         .pack-btn-bottom {
           font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          /* Sin opacidad: al 0.72 el blanco caia a 2.33:1. La jerarquia con la
+             linea principal la marca el tamano (12px frente a 21px). */
           font-weight: 400; font-size: 12px; letter-spacing: -0.02em;
-          opacity: 0.72;
         }
         @media (max-width: 900px) {
           .packs-head { min-height: 0; }

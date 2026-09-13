@@ -2,7 +2,7 @@
 .case-page section{padding-top:0!important;padding-bottom:0!important;}
 .case-top{display:flex;flex-direction:column;padding-bottom:clamp(20px,2.5vw,34px);}
 .case-back{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;font-family:"HelveticaNeueCyr","Inter","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:400;font-size:14px;letter-spacing:-0.02em;color:var(--fg-muted);text-transform:lowercase;margin-bottom:clamp(24px,3vw,40px);transition:color .3s var(--ease-out-cubic);cursor:none;}
-.case-back:hover{color:#F95738;}
+.case-back:hover{color:var(--accent-text);}
 .case-back svg{width:18px;height:18px;}
 .case-title{font-family:"HelveticaNeueCyr","Inter","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:300;font-size:clamp(40px,6vw,96px);line-height:0.95;letter-spacing:-0.045em;color:var(--fg);text-transform:lowercase;margin-bottom:clamp(28px,3.5vw,52px);}
 .case-meta{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,2.5vw,40px);border-top:1px solid var(--border);padding-top:clamp(16px,2vw,26px);margin-bottom:clamp(28px,3.5vw,52px);}

@@ -115,7 +115,7 @@
   cursor: none;
   transition: color 0.25s ease, background 0.25s ease;
 }
-.nav-lang-item:hover { background: var(--bg); color: var(--accent); }
+.nav-lang-item:hover { background: var(--bg); color: var(--accent-text); }
 .nav-lang-item.is-active { color: var(--fg); }
 @media (max-width: 860px) {
   .nav-social { display: none; }
@@ -125,11 +125,20 @@
 .nav-pill-label { display: inline-block; }
 .nav-pill-label-stack {
   position: relative;
-  height: 16px;
-  min-width: 56px;
+  /* Caja dimensionada para la etiqueta de 19px/700 (ver .label-state).
+     "CLOSE" mide 60px a ese tamano; con 56px (el valor de cuando era 16px/600)
+     se recortaba contra el overflow:hidden y "MENU" quedaba a ras. 72px le
+     devuelve la holgura que tenia el diseno original (~10px). El alto de la
+     pill no cambia: lo fija el icono de 40px, no esta caja. */
+  height: 22px;
+  min-width: 72px;
   overflow: hidden;
 }
+/* 19px/700 para calificar como "texto grande" en WCAG (>=18.66px en negrita):
+   asi basta 3:1 sobre el coral, que ya cumple. El coral no se toca. */
 .label-state {
+  font-size: 19px;
+  font-weight: 700;
   position: absolute; top: 0; left: 0;
   transition: transform 0.45s var(--ease-out-expo), opacity 0.3s ease;
   white-space: nowrap;
@@ -308,7 +317,7 @@
 @media (max-width: 700px) {
   .nav-pill { padding: 6px 6px 6px 18px; font-size: 13px; gap: 10px; }
   .nav-pill:hover { transform: scale(1.03); }
-  .nav-pill-label-stack { height: 13px; }
+  .nav-pill-label-stack { height: 22px; }
   .nav-pill-icon { width: 34px; height: 34px; }
   .nav-dropdown { right: 0; left: auto; min-width: min(92vw, 380px); padding: 24px 16px; }
   .nav-dd-link { font-size: clamp(28px, 8vw, 40px); padding: 10px 18px; }
@@ -403,7 +412,9 @@
   .cm-methods { flex-wrap: wrap; }
   .cm-method { flex: 1 1 40%; }
 }
-.cm-method.active { background: #F95738; color: var(--on-accent); }
+/* Chip de 13px: agrandarlo rompe la fila de 4 canales, asi que usa el coral
+   oscuro de la paleta (4.79:1 con blanco) en lugar de crecer. */
+.cm-method.active { background: var(--accent-deep); color: var(--on-accent); }
 .cm-method-ic { width: 15px; height: 15px; display: inline-flex; }
 .cm-method-ic svg { width: 100%; height: 100%; }
 .cm-methods + .cm-input { margin-top: 10px; }
@@ -414,7 +425,8 @@
   background: #F95738; color: var(--on-accent);
   border-radius: 999px; padding: 19px 28px;
   font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400; font-size: clamp(16px, 1.3vw, 19px); letter-spacing: -0.02em;
+  /* 19-21px/700: "texto grande" WCAG; el coral #F95738 no cambia. */
+  font-weight: 700; font-size: clamp(19px, 1.4vw, 21px); letter-spacing: -0.02em;
   transition: background 0.4s var(--ease-out-cubic), color 0.4s var(--ease-out-cubic);
 }
 .cm-submit:hover { background: var(--fg); color: var(--on-dark); }
@@ -468,4 +480,4 @@
   color: var(--fg-muted); text-align: center;
 }
 .cm-consent a { color: var(--fg); border-bottom: 1px solid #F95738; }
-.cm-consent a:hover { color: #F95738; }
+.cm-consent a:hover { color: var(--accent-text); }

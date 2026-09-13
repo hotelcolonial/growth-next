@@ -50,8 +50,9 @@
   border-radius: 999px;
   padding: 16px 26px;
   font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-size: clamp(15px, 1.2vw, 18px);
+  /* 19-21px/700: "texto grande" WCAG, para que el coral cumpla con 3:1. */
+  font-weight: 700;
+  font-size: clamp(19px, 1.4vw, 21px);
   letter-spacing: -0.02em;
   transition: background 0.4s var(--ease-out-cubic), color 0.4s var(--ease-out-cubic),
     border-color 0.4s var(--ease-out-cubic);

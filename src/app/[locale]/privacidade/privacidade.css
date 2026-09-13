@@ -100,4 +100,4 @@
   border-bottom: 1px solid var(--accent);
   transition: color 0.3s ease;
 }
-.pv-section a:hover { color: var(--accent); }
+.pv-section a:hover { color: var(--accent-text); }

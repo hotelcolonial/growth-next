@@ -247,7 +247,7 @@ export default function Footer() {
               className="nav-pill nav-pill-dark"
               aria-label={t('topAria')}
             >
-              <span className="nav-pill-label" style={{fontSize: '16px'}}>
+              <span className="nav-pill-label" style={{fontSize: '19px', fontWeight: 700}}>
                 {t('topLabel')}
               </span>
               <span className="nav-pill-icon">

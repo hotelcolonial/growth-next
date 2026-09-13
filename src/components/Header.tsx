@@ -245,7 +245,6 @@ export default function Header() {
               <span className="nav-pill-label nav-pill-label-stack">
                 <span
                   className={'label-state ' + (menuOpen ? 'out' : 'in')}
-                  style={{fontSize: '16px'}}
                 >
                   {t('menu')}
                 </span>

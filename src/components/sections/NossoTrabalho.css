@@ -40,7 +40,7 @@
 }
 .work-head-desc strong {
   font-weight: 400;
-  color: #F95738;
+  color: var(--accent-text);
 }
 .work-eyebrow {
   font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -174,8 +174,9 @@
   align-items: center;
   gap: 8px;
   font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-size: 15px;
+  /* 19px/700: "texto grande" WCAG, para que baste 3:1 sobre el coral. */
+  font-weight: 700;
+  font-size: 19px;
   letter-spacing: -0.045em;
   opacity: 0;
   transform: translateY(4px);
@@ -185,7 +186,7 @@
 .work-pill-label .arrow { transition: transform 0.4s var(--ease-out-expo); }
 .work-card.cursor-active .work-pill {
   opacity: 1;
-  width: 210px;
+  width: 232px;
   height: 58px;
 }
 .work-card.cursor-active .work-pill-label {

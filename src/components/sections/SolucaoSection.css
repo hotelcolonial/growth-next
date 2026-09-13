@@ -80,7 +80,7 @@
         }
         .sol-head-desc strong {
           font-weight: 400;
-          color: #F95738;
+          color: var(--accent-text);
         }
         .sol-lead-title {
           font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -275,7 +275,7 @@
           color: var(--fg);
         }
         .sol-benefits li:first-child { border-top: 1px solid var(--border); }
-        .sol-benefit-arrow { color: var(--accent); flex-shrink: 0; opacity: 0.85; }
+        .sol-benefit-arrow { color: var(--accent-text); flex-shrink: 0; opacity: 0.85; }
 
         /* Secondary label */
         .sol-sec-label {

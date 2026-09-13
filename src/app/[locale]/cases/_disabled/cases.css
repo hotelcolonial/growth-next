@@ -42,7 +42,7 @@
   line-height: 1.05; letter-spacing: -0.02em; color: var(--fg);
 }
 .case-card-metric { margin-top: 6px; font-size: 14px; color: var(--fg-muted); }
-.case-card-metric strong { color: var(--accent); font-family: var(--font-display); font-size: 18px; }
+.case-card-metric strong { color: var(--accent-text); font-family: var(--font-display); font-size: 18px; }
 .cases-empty {
   padding: clamp(48px, 8vw, 96px);
   text-align: center;

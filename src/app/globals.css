@@ -5,8 +5,12 @@
 :root {
   /* Valores reales que el sitio original aplica en runtime: paleta "ink" (Coral) + fondo "snow" fusionados */
   --bg:#FFFFFF; --bg-elev-1:#F6F6F6; --bg-elev-2:#101113; --bg-deep:#1E2024;
-  --fg:#101113; --fg-muted:#5E6166; --fg-subtle:#9DA0A5;
-  --accent:#FF4D2E; --accent-deep:#D63516; --on-accent:#FFFFFF; --on-dark:#FFFFFF;
+  --fg:#101113; --fg-muted:#52565B; --fg-subtle:#6E7177;
+  --accent:#FF4D2E; --accent-deep:#D63516;
+  /* Coral de marca oscurecido SOLO para texto pequeno (<24px), donde WCAG AA
+     exige 4.5:1. El coral vivo (#F95738 / --accent) se mantiene intacto en
+     botones, iconos y texto de display, que solo necesitan 3:1. */
+  --accent-text:#DA2907; --on-accent:#FFFFFF; --on-dark:#FFFFFF;
   --border:rgba(13,27,42,0.09); --border-strong:rgba(13,27,42,0.18);
   --font-display:"Montserrat",system-ui,sans-serif;
   --font-body:"Inter",system-ui,sans-serif;
@@ -98,7 +102,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;background-ima
 .marquee-track{display:inline-flex;gap:60px;animation:marquee 40s linear infinite;padding-left:60px;}
 .marquee-item{font-family:"HelveticaNeueCyr","Inter","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:300;text-transform:lowercase;letter-spacing:-.045em;font-size:clamp(40px,6vw,80px);color:var(--fg);}
 .marquee-item.muted{color:var(--fg-subtle);}
-.marquee-item .dot{color:var(--accent);margin-left:60px;display:inline-block;}
+.marquee-item .dot{color:var(--accent-text);margin-left:60px;display:inline-block;}
 @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 ::-webkit-scrollbar{width:8px;height:8px;}
 ::-webkit-scrollbar-track{background:var(--bg);}

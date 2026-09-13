@@ -31,7 +31,7 @@
   letter-spacing: -0.03em; color: var(--fg);
   transition: color 0.3s var(--ease-out-cubic);
 }
-.cta-link:hover { color: #F95738; }
+.cta-link:hover { color: var(--accent-text); }
 .cta-link-tx { position: relative; }
 .cta-link-tx::after {
   content: "";
@@ -51,7 +51,7 @@
   position: relative;
   width: 15px; height: 15px;
   flex-shrink: 0;
-  color: #F95738;
+  color: var(--accent-text);
   line-height: 0;
   overflow: hidden;
 }
@@ -71,9 +71,10 @@
 .cta-btn {
   margin-top: clamp(28px, 3.5vw, 48px); align-self: flex-start;
   background: #F95738; color: var(--on-accent);
-  border-radius: 999px; padding: 16px 34px;
+  border-radius: 999px; padding: 17px 34px;
   font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400; font-size: clamp(15px, 1.2vw, 18px); letter-spacing: -0.02em;
+  /* 19-21px/700: "texto grande" WCAG; el coral #F95738 no cambia. */
+  font-weight: 700; font-size: clamp(19px, 1.5vw, 21px); letter-spacing: -0.02em;
   transition: background 0.4s var(--ease-out-cubic), color 0.4s var(--ease-out-cubic);
 }
 .cta-btn:hover { background: var(--fg); color: var(--on-dark); }
@@ -91,7 +92,7 @@
 .cta-quote-by {
   margin-top: 8px;
   font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400; font-size: 13px; letter-spacing: -0.02em; color: #F95738;
+  font-weight: 400; font-size: 13px; letter-spacing: -0.02em; color: var(--accent-text);
 }
 @media (max-width: 900px) {
   .cta-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -100,7 +101,7 @@
 .footer-nav{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
 .footer-left{display:flex;align-items:center;gap:clamp(20px,3vw,44px);flex-wrap:wrap;}
 .footer-blog{display:inline-flex;align-items:center;gap:8px;font-family:"HelveticaNeueCyr","Inter","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:400;font-size:clamp(15px,1.2vw,18px);letter-spacing:-0.03em;color:var(--fg);transition:color .3s var(--ease-out-cubic);}
-.footer-blog:hover{color:#F95738;}
+.footer-blog:hover{color:var(--accent-text);}
 .footer-blog svg{width:100%;height:100%;display:block;}
 .footer-blog-arrow{position:relative;width:14px;height:14px;flex-shrink:0;overflow:hidden;line-height:0;}
 .footer-blog-arrow .icon-out,.footer-blog-arrow .icon-in{display:block;width:100%;height:100%;transition:transform .6s var(--ease-out-expo);line-height:0;}
