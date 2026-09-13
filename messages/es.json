@@ -226,5 +226,12 @@
     "errorText": "no pudimos enviar tu contacto ahora. inténtalo de nuevo en unos instantes.",
     "retry": "intentar de nuevo",
     "requiredFields": "completa tu nombre y tu contacto para continuar."
+  },
+  "NotFound": {
+    "eyebrow": "error 404",
+    "title": "página no encontrada",
+    "subtitle": "La dirección a la que intentaste entrar no existe o fue movida. No se perdió nada: volvé al inicio y seguí desde ahí.",
+    "backHome": "volver al inicio",
+    "backBlog": "ver el blog"
   }
 }

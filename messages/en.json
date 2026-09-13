@@ -226,5 +226,12 @@
     "errorText": "we could not send your message right now. please try again in a moment.",
     "retry": "try again",
     "requiredFields": "please fill in your name and your contact to continue."
+  },
+  "NotFound": {
+    "eyebrow": "error 404",
+    "title": "page not found",
+    "subtitle": "The address you tried to reach does not exist or has been moved. Nothing is lost: head back to the homepage and continue from there.",
+    "backHome": "back to homepage",
+    "backBlog": "see the blog"
   }
 }

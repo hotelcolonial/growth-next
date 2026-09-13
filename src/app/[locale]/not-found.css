@@ -1,0 +1,86 @@
+.nf-page {
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  padding: clamp(120px, 18vh, 220px) 0 clamp(80px, 12vw, 160px);
+}
+.nf-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(18px, 2.2vw, 28px);
+  max-width: 62ch;
+}
+/* El "404" grande, en coral, como marca de agua del bloque. */
+.nf-code {
+  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: clamp(88px, 18vw, 240px);
+  line-height: 0.82;
+  letter-spacing: -0.06em;
+  color: var(--accent);
+  margin-bottom: clamp(-8px, -1vw, -20px);
+}
+.nf-title {
+  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: clamp(32px, 4.8vw, 72px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  text-transform: lowercase;
+  color: var(--fg);
+}
+.nf-sub {
+  color: var(--fg-muted);
+  font-size: clamp(16px, 1.4vw, 20px);
+  line-height: 1.5;
+  max-width: 52ch;
+}
+.nf-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: clamp(10px, 1.4vw, 18px);
+}
+/* Mismo lenguaje que las pills del header: una sólida y una de contorno. */
+.nf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 999px;
+  padding: 16px 26px;
+  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: clamp(15px, 1.2vw, 18px);
+  letter-spacing: -0.02em;
+  transition: background 0.4s var(--ease-out-cubic), color 0.4s var(--ease-out-cubic),
+    border-color 0.4s var(--ease-out-cubic);
+}
+.nf-btn-primary {
+  background: var(--accent);
+  color: var(--on-accent);
+  border: 1.5px solid var(--accent);
+}
+.nf-btn-primary:hover {
+  background: var(--fg);
+  border-color: var(--fg);
+  color: var(--on-dark);
+}
+.nf-btn-ghost {
+  background: transparent;
+  color: var(--fg);
+  border: 1.5px solid var(--border-strong);
+}
+.nf-btn-ghost:hover {
+  background: var(--bg-elev-1);
+  border-color: var(--fg);
+}
+.nf-btn svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+@media (max-width: 520px) {
+  .nf-actions { width: 100%; }
+  .nf-btn { flex: 1 1 100%; justify-content: center; }
+}
