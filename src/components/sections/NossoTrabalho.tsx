@@ -2,7 +2,7 @@
 
 import { useRef, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
-import { useRouter } from '@/i18n/navigation';
+import { Link as LocaleLink } from '@/i18n/navigation';
 import Reveal from '@/components/Reveal';
 import Photo from '@/components/Photo';
 import './NossoTrabalho.css';
@@ -15,7 +15,8 @@ function WorkCard({
   title,
   sub,
   area,
-  h
+  h,
+  href
 }: {
   img?: string;
   img2?: string;
@@ -25,10 +26,10 @@ function WorkCard({
   sub?: string;
   area?: string;
   h?: string;
+  href: string;
 }) {
   const t = useTranslations('Work');
-  const router = useRouter();
-  const cardRef = useRef<HTMLButtonElement>(null);
+  const cardRef = useRef<HTMLAnchorElement>(null);
   const pillRef = useRef<HTMLSpanElement>(null);
   useEffect(() => {
     const card = cardRef.current;
@@ -82,12 +83,16 @@ function WorkCard({
     };
   }, []);
   return (
-    <button
+    // Enlace real (<a href>), no un router.push sobre un <button>: asi el case
+    // es rastreable por buscadores y modelos de IA, se puede abrir en pestana
+    // nueva y es alcanzable con el teclado. El diseno no cambia: .work-card ya
+    // era display:block y todo el CSS es por clase, no por etiqueta.
+    <LocaleLink
       ref={cardRef}
+      href={href}
       className="work-card"
       data-hover={true}
       style={{ gridArea: area, '--card-h': h } as React.CSSProperties}
-      onClick={() => router.push('/cases/hotel-colonial-iguacu')}
     >
       <div className="work-card-media">
         <Photo
@@ -120,9 +125,14 @@ function WorkCard({
         <span className="work-title">{title}</span>
         <span className="work-sub">{sub}</span>
       </span>
-    </button>
+    </LocaleLink>
   );
 }
+
+// Hoy solo hay un case publicado, asi que las cinco tarjetas apuntan a el
+// (antes tambien, pero via router.push hardcodeado y sin enlace real).
+// Cuando haya mas cases, cada tarjeta recibira su propio slug.
+const CASE_HREF = '/cases/hotel-colonial-iguacu';
 
 export default function NossoTrabalho() {
   const t = useTranslations('Work');
@@ -149,6 +159,7 @@ export default function NossoTrabalho() {
         <Reveal delay={0} className="work-reveal">
           <div className="work-grid">
             <WorkCard
+              href={CASE_HREF}
               area="c1"
               h="560px"
               img="/assets/piscina-area-lazer-guarda-sois-hotel-colonial-iguacu.webp"
@@ -157,6 +168,7 @@ export default function NossoTrabalho() {
               sub={t('card1Sub')}
             />
             <WorkCard
+              href={CASE_HREF}
               area="c2"
               h="560px"
               img="/assets/lobby-saguao-area-convivencia-hotel-colonial-iguacu.webp"
@@ -172,6 +184,7 @@ export default function NossoTrabalho() {
               </h3>
             </div>
             <WorkCard
+              href={CASE_HREF}
               area="c4"
               h="420px"
               img="/assets/fachada-entrada-principal-piscina-hotel-colonial-iguacu.webp"
@@ -180,6 +193,7 @@ export default function NossoTrabalho() {
               sub={t('card4Sub')}
             />
             <WorkCard
+              href={CASE_HREF}
               area="c5"
               h="420px"
               img="/assets/lobby-recepcao-area-estar-hotel-colonial-iguacu.webp"
@@ -188,6 +202,7 @@ export default function NossoTrabalho() {
               sub={t('card5Sub')}
             />
             <WorkCard
+              href={CASE_HREF}
               area="c6"
               h="420px"
               img="/assets/estacionamento-fonte-jardim-hotel-colonial-iguacu.webp"

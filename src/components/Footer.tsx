@@ -4,6 +4,8 @@ import {useTranslations} from 'next-intl';
 import {Link as LocaleLink} from '@/i18n/navigation';
 import Reveal from '@/components/Reveal';
 import ContactModal from '@/components/ContactModal';
+import SocialIcon from '@/components/SocialIcon';
+import {INSTAGRAM_URL, WHATSAPP_URL} from '@/lib/social';
 import './Footer.css';
 
 export default function Footer() {
@@ -22,13 +24,13 @@ export default function Footer() {
             <Reveal delay={140} className="cta-mid">
               <span className="cta-label">{t('ctaLabel')}</span>
               <div className="cta-links">
-                <a
+                {/* Solo abre el modal: es un <button>, no un <a href="#">. Con
+                    href="#" el clic-medio llevaba a la home y los lectores de
+                    pantalla lo anunciaban como enlace. */}
+                <button
+                  type="button"
                   className="cta-link"
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.dispatchEvent(new CustomEvent('open-contact'));
-                  }}
+                  onClick={() => window.dispatchEvent(new CustomEvent('open-contact'))}
                 >
                   <span className="cta-link-ic">
                     <svg viewBox="0 0 24 24" fill="currentColor">
@@ -62,57 +64,11 @@ export default function Footer() {
                       </svg>
                     </span>
                   </span>
-                </a>
-                <a
+                </button>
+                <button
+                  type="button"
                   className="cta-link"
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.dispatchEvent(new CustomEvent('open-contact'));
-                  }}
-                >
-                  <span className="cta-link-ic">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                      <rect x="3" y="3" width="18" height="18" rx="5" />
-                      <circle cx="12" cy="12" r="4" />
-                      <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none" />
-                    </svg>
-                  </span>
-                  <span className="cta-link-tx">{t('linkInstagram')}</span>
-                  <span className="cta-link-arrow">
-                    <span className="icon-out">
-                      <svg viewBox="0 0 24 24">
-                        <path
-                          d="M6 18 L18 6 M9 6 L18 6 L18 15"
-                          stroke="currentColor"
-                          strokeWidth="2.2"
-                          fill="none"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </span>
-                    <span className="icon-in">
-                      <svg viewBox="0 0 24 24">
-                        <path
-                          d="M6 18 L18 6 M9 6 L18 6 L18 15"
-                          stroke="currentColor"
-                          strokeWidth="2.2"
-                          fill="none"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </span>
-                  </span>
-                </a>
-                <a
-                  className="cta-link"
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.dispatchEvent(new CustomEvent('open-contact'));
-                  }}
+                  onClick={() => window.dispatchEvent(new CustomEvent('open-contact'))}
                 >
                   <span className="cta-link-ic">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -147,7 +103,7 @@ export default function Footer() {
                       </svg>
                     </span>
                   </span>
-                </a>
+                </button>
               </div>
               <button
                 className="cta-btn"
@@ -227,44 +183,20 @@ export default function Footer() {
           </div>
           <div className="footer-nav-right">
             <div className="nav-social">
-              <a
-                href="https://instagram.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="nav-social-ico"
-                aria-label="Instagram"
-                data-hover
-              >
+              <SocialIcon url={INSTAGRAM_URL} label="Instagram">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
                   <rect x="3" y="3" width="18" height="18" rx="5" />
                   <circle cx="12" cy="12" r="4" />
                   <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none" />
                 </svg>
-              </a>
-              <a
-                href="https://wa.me/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="nav-social-ico"
-                aria-label="WhatsApp"
-                data-hover
-              >
+              </SocialIcon>
+              <SocialIcon url={WHATSAPP_URL} label="WhatsApp">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-5.6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.7.7-.9 1.7-.5 2.8a9 9 0 0 0 3.8 4.3c1.9 1 2.3.9 2.8.8.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1Z" />
                 </svg>
-              </a>
-              <button className="nav-lang" data-hover aria-label={t('langAria')}>
-                <span>{t('langLabel')}</span>
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path
-                    d="M6 9l6 6 6-6"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
+              </SocialIcon>
+              {/* El selector de idioma vivia aqui como boton muerto (sin
+                  onClick). Se quito: el del header ya cumple esa funcion. */}
             </div>
             <button
               onClick={() => window.dispatchEvent(new CustomEvent('open-contact'))}

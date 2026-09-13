@@ -18,6 +18,11 @@
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html,body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+/* Scroll suave para los anclas del menu (#servicos, #metodo, #planos). */
+html{scroll-behavior:smooth;}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+/* El header es fixed: sin este margen el ancla dejaria el titulo debajo de el. */
+#servicos,#metodo,#planos{scroll-margin-top:clamp(90px,11vh,130px);}
 body{cursor:none;}
 @media(hover:none){body{cursor:auto;}#cursor{display:none!important;}}
 a{color:inherit;text-decoration:none;}
@@ -26,16 +31,21 @@ button{background:none;border:none;color:inherit;font:inherit;cursor:none;}
 #cursor{position:fixed;top:0;left:0;width:12px;height:12px;border-radius:50%;background:#fff;pointer-events:none;z-index:9999;mix-blend-mode:difference;transition:width .4s var(--ease-out-expo),height .4s var(--ease-out-expo),background .3s ease;transform:translate(-50%,-50%);will-change:transform,width,height;}
 #cursor.hover{width:56px;height:56px;}
 #cursor.text{width:4px;height:24px;border-radius:2px;}
-#loader{position:fixed;inset:0;z-index:10000;overflow:hidden;pointer-events:none;}
+/* ── Preloader ──────────────────────────────────────────────────────────
+   Gesto de marca de ~0,9 s. Se retira SOLO con CSS/SMIL: no hay setTimeout
+   que retenga nada, y el contenido real ya esta pintado debajo, asi que el
+   LCP no depende de esta capa. Antes duraba 7,3 s y dependia del JS. */
+#loader{position:fixed;inset:0;z-index:10000;overflow:hidden;pointer-events:none;animation:loaderDismiss .95s linear forwards;}
+@keyframes loaderDismiss{0%,92%{opacity:1;visibility:visible;}100%{opacity:0;visibility:hidden;}}
 #loader .loader-wave{position:absolute;inset:0;width:100%;height:100%;display:block;}
-#loader .loader-words{position:absolute;inset:0;display:grid;place-items:center;padding:0 6vw;}
-#loader .lw{max-width:24ch;text-align:center;opacity:0;transform:translateY(42px);font-family:"HelveticaNeueCyr","Inter","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:300;font-size:clamp(24px,3.8vw,56px);letter-spacing:-.045em;line-height:1.12;color:#101113;text-transform:lowercase;}
-#loader .lw em{font-style:normal;color:#F95738;}
-#loader .lwphrase{animation:lwCycle 3.1s cubic-bezier(0.33,1,0.68,1) .4s;}
-@keyframes lwCycle{0%{opacity:0;transform:translateY(40px);}14%{opacity:1;transform:translateY(0);}78%{opacity:1;transform:translateY(0);}100%{opacity:0;transform:translateY(-40px);}}
-#loader .loader-logo{position:absolute;top:50%;left:50%;width:clamp(220px,32vw,420px);opacity:0;transform:translate(-50%,-50%) scale(.94);animation:logoCycle 2.4s cubic-bezier(0.33,1,0.68,1) 3.5s;}
+#loader .loader-logo{position:absolute;top:50%;left:50%;width:clamp(200px,28vw,380px);opacity:0;transform:translate(-50%,-50%) scale(.94);animation:logoCycle .8s cubic-bezier(0.33,1,0.68,1) .04s;}
 #loader .loader-logo img{width:100%;height:auto;display:block;}
-@keyframes logoCycle{0%{opacity:0;transform:translate(-50%,-50%) scale(.94);}18%{opacity:1;transform:translate(-50%,-50%) scale(1);}72%{opacity:1;transform:translate(-50%,-50%) scale(1);}100%{opacity:0;transform:translate(-50%,-50%) scale(1.03);}}
+@keyframes logoCycle{0%{opacity:0;transform:translate(-50%,-50%) scale(.94);}32%{opacity:1;transform:translate(-50%,-50%) scale(1);}60%{opacity:1;transform:translate(-50%,-50%) scale(1);}100%{opacity:0;transform:translate(-50%,-50%) scale(1.03);}}
+/* Ya visto en esta sesion. El servidor emite data-loader-seen="0" y el script
+   inline de <head> lo pasa a "1" antes del primer paint: sin parpadeo. */
+html[data-loader-seen="1"] #loader{display:none;}
+/* Movimiento reducido: se salta por completo. */
+@media(prefers-reduced-motion:reduce){#loader{display:none;}}
 #curtain{position:fixed;inset:0;z-index:9000;pointer-events:none;display:grid;place-items:center;visibility:hidden;overflow:hidden;}
 #curtain.in,#curtain.out{visibility:visible;}
 #curtain .curtain-sq{width:150vmax;height:150vmax;background:var(--bg);border-radius:16%;transform:scale(0);will-change:transform;}
@@ -48,7 +58,16 @@ button{background:none;border:none;color:inherit;font:inherit;cursor:none;}
 .reveal-line{overflow:hidden;}
 .reveal-line>span{display:inline-block;transform:translateY(110%);opacity:0;transition:transform 1.05s cubic-bezier(0.22,1,0.36,1),opacity 1.05s cubic-bezier(0.22,1,0.36,1);will-change:transform,opacity;}
 .reveal-line.in>span{transform:translateY(0);opacity:1;}
-@media(prefers-reduced-motion:reduce){.reveal,.reveal-line>span{transition:none!important;transform:none!important;opacity:1!important;}}
+/* Variante para contenido que ya esta a la vista al cargar (el hero): mismo
+   gesto que .reveal, pero como animacion CSS que arranca en el primer frame en
+   vez de esperar al IntersectionObserver (que solo corre tras hidratar). */
+/* fill:backwards (no `both`) a proposito: durante el delay mantiene el estado
+   inicial, pero al terminar el elemento vuelve a su estilo natural (visible).
+   Si por lo que sea la animacion no llegara a ejecutarse, el texto se ve igual
+   en vez de quedarse invisible. */
+.reveal-now{animation:revealNow 1.15s cubic-bezier(0.22,1,0.36,1) backwards;}
+@keyframes revealNow{from{opacity:0;transform:translateY(26px) scale(0.988);}to{opacity:1;transform:translateY(0) scale(1);}}
+@media(prefers-reduced-motion:reduce){.reveal,.reveal-line>span{transition:none!important;transform:none!important;opacity:1!important;}.reveal-now{animation:none!important;opacity:1!important;transform:none!important;}}
 .h-display{font-family:var(--font-display);font-weight:800;letter-spacing:-.03em;line-height:.95;}
 .h-hero{font-size:clamp(56px,11vw,200px);}
 .h-1{font-size:clamp(48px,7vw,120px);line-height:1.0;}

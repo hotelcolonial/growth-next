@@ -35,7 +35,7 @@ export default function EstrategiaSection() {
   ];
   const [open, setOpen] = useState(0);
   return (
-    <section className="estrategia-section">
+    <section className="estrategia-section" id="servicos">
       <div className="container">
         <div className="estrategia-grid">
           <div className="estrategia-left">

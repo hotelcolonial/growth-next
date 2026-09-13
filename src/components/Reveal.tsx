@@ -6,6 +6,7 @@ export default function Reveal({
   delay = 0,
   as: As = 'div',
   line = false,
+  immediate = false,
   className = '',
   style = {},
   ...rest
@@ -14,12 +15,20 @@ export default function Reveal({
   delay?: number;
   as?: ElementType;
   line?: boolean;
+  /**
+   * Para contenido que ya esta a la vista al cargar (el hero). En vez de
+   * esperar al IntersectionObserver —que solo corre despues de hidratar, y por
+   * eso los textos "caian" con segundos de retraso— anima con una animacion CSS
+   * que arranca en el primer frame. Sin dependencia de JavaScript.
+   */
+  immediate?: boolean;
   className?: string;
   style?: CSSProperties;
   [key: string]: unknown;
 }) {
   const ref = useRef<HTMLElement | null>(null);
   useEffect(() => {
+    if (immediate) return; // lo resuelve el CSS, no hace falta observar
     const el = ref.current;
     if (!el) return;
     el.style.transitionDelay = delay / 1000 + 's';
@@ -36,13 +45,17 @@ export default function Reveal({
     );
     io.observe(el);
     return () => io.disconnect();
-  }, [delay]);
+  }, [delay, immediate]);
 
   const Tag = As as ElementType;
+  const base = immediate ? 'reveal-now ' : line ? 'reveal-line ' : 'reveal ';
+  // En modo immediate el retraso lo lleva la propia animacion CSS, para que se
+  // aplique desde el primer frame y no despues de hidratar.
+  const finalStyle = immediate ? {animationDelay: `${delay}ms`, ...style} : style;
   return (
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    <Tag ref={ref as any} className={(line ? 'reveal-line ' : 'reveal ') + className} style={style} {...rest}>
-      {line ? <span>{children}</span> : children}
+    <Tag ref={ref as any} className={base + className} style={finalStyle} {...rest}>
+      {line && !immediate ? <span>{children}</span> : children}
     </Tag>
   );
 }

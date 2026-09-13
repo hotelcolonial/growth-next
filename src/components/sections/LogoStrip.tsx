@@ -4,9 +4,14 @@ import {useTranslations} from 'next-intl';
 import Reveal from '@/components/Reveal';
 import './LogoStrip.css';
 
+// Los logos no son homogeneos: unos llevan `big`, otros `invert` y otros
+// ninguno. Sin este tipo TypeScript infiere una union y por eso el map estaba
+// anotado como `any`.
+type Logo = {src: string; alt: string; big?: boolean; invert?: boolean};
+
 export default function LogoStrip() {
   const t = useTranslations('Logos');
-  const logos = [{
+  const logos: Logo[] = [{
     src: "/assets/logos/meritum-hoteis-logo.webp",
     alt: "Méritum Hotéis",
     big: true
@@ -35,7 +40,7 @@ export default function LogoStrip() {
         <div className="logostrip-row">
           <span className="logostrip-label">{t('label')}</span>
           <div className="logostrip-logos">
-            {logos.map((l: any, i: number) => (
+            {logos.map((l, i) => (
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 key={i}

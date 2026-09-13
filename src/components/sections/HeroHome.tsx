@@ -20,7 +20,7 @@ export default function HeroHome() {
   return (
     <section className="hero2">
       <div className="hero2-grid">
-        <Reveal as="h1" className="hero2-headline">
+        <Reveal immediate as="h1" className="hero2-headline">
           <div className="row line1">
             <span>{t('headlineLine1')}</span>
           </div>
@@ -29,7 +29,7 @@ export default function HeroHome() {
             <span className="hero2-sub">{t('subtitle')}</span>
           </div>
         </Reveal>
-        <Reveal delay={180} as="ul" className="hero2-services">
+        <Reveal immediate delay={90} as="ul" className="hero2-services">
           {services.map((s, i) => (
             <li key={i}>{s}</li>
           ))}

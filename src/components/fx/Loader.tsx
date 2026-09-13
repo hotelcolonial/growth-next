@@ -1,42 +1,24 @@
-'use client';
-import {useEffect, useRef} from 'react';
-import {useTranslations} from 'next-intl';
-
+// Preloader: gesto de marca de ~0,9 s.
+//
+// No lleva JavaScript a proposito:
+//  - la animacion es CSS (logo) + SMIL (la ola), asi que el preloader se
+//    retira solo aunque el JS falle o tarde. Antes dependia de un setTimeout
+//    de 7,3 s: si el JS no corria, la cortina no se levantaba nunca.
+//  - el contenido real ya esta renderizado debajo desde el primer paint, de
+//    modo que el LCP no depende de esta capa.
+//  - que aparezca una sola vez por sesion lo resuelve el script inline de
+//    layout.tsx, que marca <html data-loader-seen> ANTES del primer paint.
+//
+// aria-hidden: es decoracion pura; los lectores de pantalla deben ignorarla.
 export default function Loader() {
-  const t = useTranslations('Loader');
-  const ref = useRef<HTMLDivElement | null>(null);
-  useEffect(() => {
-    const loader = ref.current;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const wave = document.getElementById('loaderWaveAnim') as any;
-    const t1 = setTimeout(() => {
-      if (wave && wave.beginElement) {
-        try {
-          wave.beginElement();
-        } catch {
-          /* noop */
-        }
-      }
-      document.dispatchEvent(new CustomEvent('app:ready'));
-    }, 5700);
-    const t2 = setTimeout(() => {
-      if (loader) loader.style.display = 'none';
-    }, 7300);
-    return () => {
-      clearTimeout(t1);
-      clearTimeout(t2);
-    };
-  }, []);
-
   return (
-    <div id="loader" ref={ref}>
+    <div id="loader" aria-hidden="true">
       <svg className="loader-wave" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
         <path fill="#F4EFEA" d="M0,0 H1440 V900 C1140,900 860,900 580,900 C380,900 180,900 0,900 Z">
           <animate
-            id="loaderWaveAnim"
             attributeName="d"
-            begin="indefinite"
-            dur="1.5s"
+            begin="0.42s"
+            dur="0.46s"
             fill="freeze"
             calcMode="spline"
             keyTimes="0;1"
@@ -45,14 +27,9 @@ export default function Loader() {
           />
         </path>
       </svg>
-      <div className="loader-words">
-        <span className="lw lwphrase">
-          {t.rich('phrase', {em: (chunks) => <em>{chunks}</em>})}
-        </span>
-      </div>
       <div className="loader-logo">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/logo-growth-transparente.webp" alt="Growth Hotel Solutions" />
+        <img src="/logo-growth-transparente.webp" alt="" />
       </div>
     </div>
   );

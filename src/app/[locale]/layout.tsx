@@ -42,7 +42,34 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   return (
-    <html lang={locale}>
+    // data-loader-seen="0" es el valor por defecto que emite el SERVIDOR, asi
+    // que el atributo existe en el HTML desde el principio. El script inline de
+    // abajo solo lo cambia a "1" cuando corresponde.
+    //
+    // suppressHydrationWarning: el script modifica ese atributo ANTES de que
+    // React hidrate, asi que servidor y cliente difieren a proposito. Es el
+    // patron documentado por Next para esto (guia "Preventing flash before
+    // hydration", seccion Themes). Solo silencia los atributos de ESTE elemento
+    // —no se propaga a los hijos—, asi que no puede ocultar mismatches reales
+    // en el resto del arbol.
+    <html lang={locale} data-loader-seen="0" suppressHydrationWarning>
+      <head>
+        {/*
+          Va en <head> para ejecutarse durante el parseo del HTML, antes del
+          primer paint: quien ya vio el preloader no llega a ver ni un
+          fotograma. El try/catch cubre navegadores o modos donde
+          sessionStorage esta bloqueado (ahi el preloader simplemente se
+          muestra, y se retira solo por CSS).
+        */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){try{var k='ghs:loader-seen';" +
+              "if(sessionStorage.getItem(k)){document.documentElement.setAttribute('data-loader-seen','1');}" +
+              "else{sessionStorage.setItem(k,'1');}}catch(e){}})();"
+          }}
+        />
+      </head>
       <body>
         <NextIntlClientProvider>
           <Loader />

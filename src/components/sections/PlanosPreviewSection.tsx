@@ -2,7 +2,6 @@
 
 import {useTranslations} from 'next-intl';
 import Reveal from '@/components/Reveal';
-import { useNav } from '@/lib/nav';
 import './PlanosPreviewSection.css';
 
 interface Pack {
@@ -15,7 +14,6 @@ interface Pack {
 }
 
 export default function PlanosPreviewSection() {
-  useNav();
   const t = useTranslations('Planos');
   const packs: Pack[] = [
     {

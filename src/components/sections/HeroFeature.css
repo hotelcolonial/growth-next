@@ -21,7 +21,13 @@
           pointer-events: none;
           box-shadow: 0 40px 80px -40px rgba(16, 17, 19, 0.35);
           background: var(--bg-elev-2);
-          transform: translate(-50%, -50%) scale(0.34);
+          /* Estado de reposo EXACTO que el JS calcula en scroll 0 (ver
+             HeroFeature.tsx: restX = 22.2vw, restY = 2vh, startScale = 0.235).
+             Antes aqui habia `scale(0.34)` sin desplazamiento, asi que hasta
+             que corria el primer frame de JS el video se veia centrado en la
+             pantalla y luego saltaba a su sitio. Con esto el primer paint ya
+             coincide con el primer tick del rAF: no hay salto. */
+          transform: translate(-50%, -50%) translate3d(22.2vw, 2vh, 0) scale(0.235);
         }
         .hero-feature-frame video,
         .hero-feature-frame img {
