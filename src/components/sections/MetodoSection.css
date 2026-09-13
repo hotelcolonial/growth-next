@@ -20,7 +20,7 @@
           gap: clamp(22px, 3.2vw, 48px);
         }
         .proc-eyebrow {
-          font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-family: var(--font-sans);
           font-weight: 400;
           font-size: clamp(20px, 2vw, 30px);
           letter-spacing: -0.03em;
@@ -28,7 +28,7 @@
           color: var(--fg);
         }
         .proc-headline {
-          font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-family: var(--font-sans);
           font-weight: 300;
           font-size: clamp(42px, 6.2vw, 100px);
           line-height: 0.9;
@@ -41,7 +41,7 @@
         }
         .proc-tag {
           display: inline-flex; align-items: center; gap: 11px;
-          font-family: "Inter", system-ui, sans-serif;
+          font-family: var(--font-body);
           font-weight: 700; font-size: 11px;
           letter-spacing: 0.1em; text-transform: uppercase;
           color: var(--accent);
@@ -51,7 +51,7 @@
           background: var(--accent); display: inline-block;
         }
         .proc-h2 {
-          font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-family: var(--font-sans);
           font-weight: 400;
           font-size: clamp(28px, 3.4vw, 50px);
           line-height: 0.95; letter-spacing: -0.045em;
@@ -59,7 +59,7 @@
         }
         .proc-h2 em { font-style: normal; color: var(--accent); }
         .proc-lead {
-          font-family: "Inter", system-ui, sans-serif;
+          font-family: var(--font-body);
           font-weight: 400; font-size: clamp(14px, 1.05vw, 16px);
           line-height: 1.4; letter-spacing: -0.02em;
           color: var(--fg-muted);
@@ -94,13 +94,13 @@
           margin-top: 6px;
         }
         .proc-step-label {
-          font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-family: var(--font-sans);
           font-weight: 400; font-size: clamp(13px, 1vw, 15px);
           letter-spacing: -0.02em; text-transform: lowercase;
           color: var(--fg-muted);
         }
         .proc-step-num {
-          font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-family: var(--font-sans);
           font-weight: 400;
           font-size: clamp(52px, 6.5vw, 96px);
           line-height: 0.82;
@@ -108,7 +108,7 @@
           color: #F95738;
         }
         .proc-title {
-          font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-family: var(--font-sans);
           font-weight: 300;
           font-size: clamp(32px, 4vw, 58px);
           line-height: 0.95; letter-spacing: -0.045em;
@@ -116,13 +116,13 @@
           color: var(--fg);
         }
         .proc-sub {
-          font-family: "Inter", system-ui, sans-serif;
+          font-family: var(--font-body);
           font-weight: 700; font-size: 12px;
           letter-spacing: -0.01em; text-transform: uppercase;
           color: var(--accent);
         }
         .proc-desc {
-          font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-family: var(--font-sans);
           font-weight: 400; font-size: clamp(15px, 1.1vw, 17px);
           line-height: 1.4; letter-spacing: -0.03em;
           color: var(--fg);

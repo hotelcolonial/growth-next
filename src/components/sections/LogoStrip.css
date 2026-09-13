@@ -12,7 +12,7 @@
           flex-wrap: nowrap;
         }
         .logostrip-label {
-          font-family: "HelveticaNeueCyr", system-ui, sans-serif;
+          font-family: var(--font-sans);
           font-size: 15px;
           font-weight: 300;
           letter-spacing: 0.01em;

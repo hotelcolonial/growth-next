@@ -190,7 +190,7 @@ export default function Header() {
               style={{
                 fontSize: '24px',
                 fontWeight: 400,
-                fontFamily: '"HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif',
+                fontFamily: 'var(--font-sans)',
                 textTransform: 'none',
                 letterSpacing: '-0.02em'
               }}

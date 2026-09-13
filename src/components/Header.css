@@ -5,7 +5,7 @@
   gap: 14px;
   padding: 8px 8px 8px 28px;
   border-radius: 999px;
-  font-family: "Inter", "Inter Fallback", system-ui, sans-serif;
+  font-family: var(--font-body);
   font-size: 17px;
   font-weight: 600;
   letter-spacing: -0.6px;
@@ -79,7 +79,7 @@
   align-items: center;
   gap: 4px;
   margin-left: 16px;
-  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   font-size: 15px;
   font-weight: 400;
   letter-spacing: -0.01em;
@@ -106,7 +106,7 @@
   z-index: 120;
 }
 .nav-lang-item {
-  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   font-size: 14px;
   letter-spacing: -0.01em;
   color: var(--fg-muted);
@@ -283,7 +283,7 @@
   padding: 14px 24px;
   border-radius: 18px;
   color: var(--fg);
-  font-family: "Inter", "Inter Fallback", system-ui, sans-serif;
+  font-family: var(--font-body);
   font-style: normal;
   font-weight: 600;
   font-size: clamp(28px, 3.4vw, 44px);
@@ -363,26 +363,26 @@
 .cm-close:hover { background: #F95738; color: var(--on-accent); }
 .cm-close svg { width: 16px; height: 16px; }
 .cm-title {
-  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 300; font-size: clamp(32px, 4.4vw, 54px);
   line-height: 0.95; letter-spacing: -0.045em;
   text-transform: lowercase; color: var(--fg);
 }
 .cm-sub {
   margin-top: 8px;
-  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 400; font-size: clamp(14px, 1.1vw, 16px);
   letter-spacing: -0.02em; color: var(--fg); line-height: 1.4;
 }
 .cm-label {
   display: block;
   margin-top: clamp(14px, 1.6vw, 20px); margin-bottom: 8px;
-  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 400; font-size: 13px; letter-spacing: -0.01em; color: var(--fg);
 }
 .cm-input {
   width: 100%;
-  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 400; font-size: clamp(15px, 1.2vw, 17px); letter-spacing: -0.02em;
   color: var(--fg);
   background: var(--bg-elev-1);
@@ -399,7 +399,7 @@
 .cm-method {
   display: inline-flex; align-items: center; justify-content: center; gap: 7px;
   flex: 1 1 0; min-width: 0; white-space: nowrap;
-  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 400; font-size: 13px; letter-spacing: -0.02em;
   color: var(--fg);
   background: var(--bg-elev-1);
@@ -424,7 +424,7 @@
   display: flex; align-items: center; justify-content: center; gap: 12px;
   background: #F95738; color: var(--on-accent);
   border-radius: 999px; padding: 19px 28px;
-  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   /* 19-21px/700: "texto grande" WCAG; el coral #F95738 no cambia. */
   font-weight: 700; font-size: clamp(19px, 1.4vw, 21px); letter-spacing: -0.02em;
   transition: background 0.4s var(--ease-out-cubic), color 0.4s var(--ease-out-cubic);
@@ -461,7 +461,7 @@
 
 .cm-error {
   margin-top: 14px;
-  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 400; font-size: 14px; letter-spacing: -0.02em; line-height: 1.4;
   color: #C0341A;
 }
@@ -475,7 +475,7 @@
 /* Aviso de consentimiento bajo el botón de envío del formulario. */
 .cm-consent {
   margin-top: 14px;
-  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 400; font-size: 12.5px; line-height: 1.45; letter-spacing: -0.01em;
   color: var(--fg-muted); text-align: center;
 }

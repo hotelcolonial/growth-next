@@ -31,7 +31,7 @@
   bottom: clamp(4px, 1vw, 14px);
   max-width: 30ch;
   text-align: right;
-  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 400;
   font-size: clamp(13px, 1vw, 16px);
   line-height: 1.4;
@@ -43,7 +43,7 @@
   color: var(--accent-text);
 }
 .work-eyebrow {
-  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 400;
   font-size: clamp(20px, 2vw, 30px);
   letter-spacing: -0.03em;
@@ -51,7 +51,7 @@
   color: rgb(0, 0, 0);
 }
 .work-headline {
-  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 300;
   font-size: clamp(42px, 6.2vw, 100px);
   line-height: 0.9;
@@ -60,7 +60,7 @@
   max-width: none;
 }
 .work-headline .serif {
-  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 400;
   font-size: 1.18em;
   letter-spacing: -0.045em;
@@ -173,7 +173,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   /* 19px/700: "texto grande" WCAG, para que baste 3:1 sobre el coral. */
   font-weight: 700;
   font-size: 19px;
@@ -220,7 +220,7 @@
   color: #F5F5F2;
 }
 .work-kicker {
-  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 400;
   font-size: 10px;
   letter-spacing: 0.14em;
@@ -229,7 +229,7 @@
   margin-bottom: 2px;
 }
 .work-title {
-  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 400;
   font-size: clamp(16px, 1.4vw, 19px);
   letter-spacing: -0.01em;
@@ -237,7 +237,7 @@
   line-height: 1.1;
 }
 .work-sub {
-  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 400;
   font-size: 13px;
   letter-spacing: -0.01em;
@@ -261,7 +261,7 @@
   justify-content: center;
 }
 .work-statement {
-  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 300;
   font-size: clamp(40px, 5.4vw, 88px);
   line-height: 0.85;
@@ -270,7 +270,7 @@
 }
 .work-statement em { font-style: normal; font-weight: 300; color: var(--accent); }
 .work-notes-title {
-  font-family: "Inter", "Inter Fallback", system-ui, sans-serif;
+  font-family: var(--font-body);
   font-weight: 700;
   font-size: clamp(18px, 1.5vw, 22px);
   letter-spacing: -0.05em;
@@ -299,7 +299,7 @@
   display: block;
 }
 .work-note-text {
-  font-family: "Inter", "Inter Fallback", system-ui, sans-serif;
+  font-family: var(--font-body);
   font-weight: 400;
   font-size: clamp(14px, 1.1vw, 16px);
   line-height: 1.32;

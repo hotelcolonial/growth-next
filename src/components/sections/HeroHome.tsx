@@ -25,7 +25,7 @@ export default function HeroHome() {
             <span>{t('headlineLine1')}</span>
           </div>
           <div className="row line2">
-            <span className="accent" style={{ fontFamily: 'HelveticaNeueCyr' }}>{t('headlineAccent')}</span>
+            <span className="accent" style={{ fontFamily: 'var(--font-sans)' }}>{t('headlineAccent')}</span>
             <span className="hero2-sub">{t('subtitle')}</span>
           </div>
         </Reveal>

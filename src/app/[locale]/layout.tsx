@@ -5,6 +5,7 @@ import {NextIntlClientProvider, hasLocale} from 'next-intl';
 import {setRequestLocale} from 'next-intl/server';
 import {routing} from '@/i18n/routing';
 import {robotsMeta, SITE_URL} from '@/lib/seo';
+import {helvetica, inter} from '../fonts';
 import '../globals.css';
 import CustomCursor from '@/components/fx/CustomCursor';
 import Loader from '@/components/fx/Loader';
@@ -52,7 +53,12 @@ export default async function LocaleLayout({
     // hydration", seccion Themes). Solo silencia los atributos de ESTE elemento
     // —no se propaga a los hijos—, asi que no puede ocultar mismatches reales
     // en el resto del arbol.
-    <html lang={locale} data-loader-seen="0" suppressHydrationWarning>
+    <html
+      lang={locale}
+      data-loader-seen="0"
+      suppressHydrationWarning
+      className={`${helvetica.variable} ${inter.variable}`}
+    >
       <head>
         {/*
           Se ejecuta durante el parseo del HTML, antes del primer paint: quien

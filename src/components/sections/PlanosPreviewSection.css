@@ -16,12 +16,12 @@
           gap: clamp(10px, 1.4vw, 20px);
         }
         .packs-eyebrow {
-          font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-family: var(--font-sans);
           font-weight: 400; font-size: clamp(20px, 2vw, 30px);
           letter-spacing: -0.03em; line-height: 0.85; color: var(--fg);
         }
         .packs-title {
-          font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-family: var(--font-sans);
           font-weight: 300; font-size: clamp(42px, 6.2vw, 100px);
           line-height: 0.9; letter-spacing: -0.045em;
           text-transform: lowercase; color: var(--fg);
@@ -44,7 +44,7 @@
           border: 3.5px solid #F95738;
         }
         .pack-name {
-          font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-family: var(--font-sans);
           font-weight: 300; font-size: clamp(26px, 2.8vw, 42px);
           line-height: 0.95; letter-spacing: -0.045em;
           text-transform: lowercase; color: var(--fg);
@@ -53,7 +53,7 @@
         .pack-flame { display: inline-block; vertical-align: middle; margin-left: 10px; }
         .pack-flame svg { width: clamp(20px, 2vw, 30px); height: auto; fill: #F95738; display: inline-block; vertical-align: middle; }
         .pack-desc {
-          font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-family: var(--font-sans);
           font-weight: 400; font-size: clamp(15px, 1.1vw, 17px);
           letter-spacing: -0.03em; line-height: 1.4; color: var(--fg);
           text-transform: lowercase;
@@ -64,14 +64,14 @@
           margin-top: clamp(20px, 2.6vw, 36px);
         }
         .pack-prefix {
-          font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-family: var(--font-sans);
           font-weight: 400; font-size: clamp(14px, 1vw, 15px);
           letter-spacing: -0.02em; color: var(--accent-text);
           text-transform: lowercase;
           margin-top: -2px;
         }
         .pack-fact {
-          font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-family: var(--font-sans);
           font-weight: 400; font-size: clamp(14px, 1vw, 15px);
           letter-spacing: -0.02em; color: var(--fg); line-height: 1.3;
           text-transform: lowercase;
@@ -81,7 +81,7 @@
         .pack-fact-no { color: var(--fg-subtle); }
         .pack-x { color: var(--fg-subtle); flex-shrink: 0; }
         .pack-obj {
-          font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-family: var(--font-sans);
           font-weight: 400; font-size: clamp(13px, 0.95vw, 15px);
           letter-spacing: -0.02em; line-height: 1.4; color: var(--fg-muted);
           margin-top: 6px;
@@ -106,7 +106,7 @@
         .pack-btn-top {
           display: flex; align-items: center; justify-content: center;
           gap: 10px;
-          font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-family: var(--font-sans);
           font-weight: 400; font-size: clamp(17px, 1.4vw, 21px);
           letter-spacing: -0.03em; line-height: 1;
         }
@@ -129,7 +129,7 @@
         .pack-btn:hover .pack-arrow .icon-in { transform: translate(-50%, -50%) translate(0, 0); }
         .pack-arrow svg { display: block; width: 100%; height: 100%; }
         .pack-btn-bottom {
-          font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-family: var(--font-sans);
           /* Sin opacidad: al 0.72 el blanco caia a 2.33:1. La jerarquia con la
              linea principal la marca el tamano (12px frente a 21px). */
           font-weight: 400; font-size: 12px; letter-spacing: -0.02em;
