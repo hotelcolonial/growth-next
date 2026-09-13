@@ -1,0 +1,91 @@
+
+        .hero2 {
+          position: relative;
+          min-height: 100vh;
+          padding: clamp(120px, 17vh, 190px) var(--gutter) 8vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          overflow: hidden;
+        }
+        .hero2-grid {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) auto;
+          align-items: start;
+          gap: clamp(24px, 5vw, 80px);
+          width: 100%;
+        }
+        .hero2-headline {
+          font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-weight: 300;
+          font-size: clamp(46px, 8.4vw, 168px);
+          line-height: 1.12;
+          letter-spacing: -0.045em;
+          text-transform: lowercase;
+          color: var(--fg);
+        }
+        .hero2-headline .row {
+          display: flex;
+          align-items: baseline;
+          gap: clamp(16px, 2.2vw, 40px);
+          flex-wrap: wrap;
+        }
+        .hero2-headline .row.line2 { align-items: flex-end; }
+        .hero2-headline .accent { color: #fff; background: #FF4D2E; padding: 0.02em 0.2em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+        .hero2-sub {
+          font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-weight: 400;
+          font-size: clamp(15px, 1.55vw, 24px);
+          line-height: 1.3;
+          letter-spacing: -0.01em;
+          text-transform: none;
+          color: var(--fg);
+          max-width: 14ch;
+          padding-bottom: clamp(10px, 1.4vw, 26px);
+        }
+        .hero2-services {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          gap: clamp(18px, 2.2vw, 34px);
+          text-align: right;
+          padding-top: clamp(6px, 1vw, 18px);
+          white-space: nowrap;
+          list-style: none;
+        }
+        .hero2-services li {
+          font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-weight: 400;
+          font-size: clamp(13px, 1.15vw, 18px);
+          letter-spacing: -0.01em;
+          color: var(--fg);
+        }
+        .hero2-hint {
+          position: absolute;
+          right: var(--gutter);
+          bottom: clamp(20px, 4vh, 44px);
+          font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: clamp(14px, 1.1vw, 17px);
+          font-weight: 400;
+          letter-spacing: -0.01em;
+          text-transform: none;
+          color: var(--fg-muted);
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          transition: opacity 0.2s linear;
+          z-index: 3;
+          pointer-events: none;
+        }
+        .hero2-hint::after {
+          content: "";
+          width: 30px; height: 1px;
+          background: var(--fg-muted);
+        }
+        @media (max-width: 860px) {
+          .hero2-grid { grid-template-columns: 1fr; }
+          .hero2-services { align-items: flex-start; text-align: left; padding-top: 8px; }
+        }
+        @media (max-width: 700px) {
+          .hero2-headline { font-size: clamp(40px, 12vw, 80px); }
+        }

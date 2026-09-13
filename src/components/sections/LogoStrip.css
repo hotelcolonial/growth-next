@@ -1,0 +1,83 @@
+
+        .logostrip-section {
+          padding: clamp(34px, 5vw, 60px) calc(var(--gutter) + clamp(16px, 3vw, 56px));
+          margin-bottom: clamp(40px, 7vw, 96px);
+        }
+        .logostrip-row {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: clamp(24px, 4vw, 56px);
+          flex-wrap: nowrap;
+        }
+        .logostrip-label {
+          font-family: "HelveticaNeueCyr", system-ui, sans-serif;
+          font-size: 15px;
+          font-weight: 300;
+          letter-spacing: 0.01em;
+          color: #000;
+          white-space: nowrap;
+          flex-shrink: 0;
+        }
+        .logostrip-logos {
+          flex: 1;
+          min-width: 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: clamp(24px, 4vw, 60px);
+          flex-wrap: wrap;
+        }
+        .logostrip-logos img {
+          height: clamp(34px, 3.8vw, 54px);
+          width: auto;
+          max-width: 170px;
+          object-fit: contain;
+          filter: grayscale(1);
+          opacity: 0.5;
+          transition: filter 0.4s var(--ease-out-cubic), opacity 0.4s var(--ease-out-cubic);
+          user-select: none;
+        }
+        .logostrip-logos img.is-big {
+          height: clamp(42px, 4.6vw, 66px);
+          max-width: 200px;
+        }
+        .logostrip-logos img.is-invert {
+          filter: grayscale(1) invert(1);
+        }
+        .logostrip-logos img:hover {
+          filter: grayscale(0);
+          opacity: 1;
+        }
+        .logostrip-logos img.is-invert:hover {
+          filter: grayscale(1) invert(1);
+          opacity: 0.85;
+        }
+        @media (max-width: 760px) {
+          .logostrip-section {
+            padding: clamp(28px, 7vw, 48px) var(--gutter);
+          }
+          .logostrip-row {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: clamp(20px, 5vw, 30px);
+          }
+          .logostrip-label {
+            text-align: center;
+          }
+          .logostrip-logos {
+            width: 100%;
+            flex: none;
+            justify-content: center;
+            align-items: center;
+            gap: clamp(22px, 6vw, 34px) clamp(26px, 7vw, 40px);
+          }
+          .logostrip-logos img {
+            height: clamp(30px, 7vw, 44px);
+          }
+          .logostrip-logos img.is-big {
+            height: clamp(36px, 8.5vw, 54px);
+          }
+        }

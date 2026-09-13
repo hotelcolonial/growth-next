@@ -1,0 +1,339 @@
+.work-section {
+  background: var(--bg);
+  padding: clamp(72px, 9vw, 130px) 0 clamp(48px, 6vw, 80px);
+}
+.work-head {
+  position: relative;
+  min-height: clamp(180px, 22vw, 300px);
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+.work-head-left {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.4vw, 20px);
+}
+.work-mark {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.work-mark svg {
+  width: clamp(46px, 5vw, 74px);
+  height: auto;
+  display: block;
+}
+.work-head-desc {
+  position: absolute;
+  right: 0;
+  bottom: clamp(4px, 1vw, 14px);
+  max-width: 30ch;
+  text-align: right;
+  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: clamp(13px, 1vw, 16px);
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+}
+.work-head-desc strong {
+  font-weight: 400;
+  color: #F95738;
+}
+.work-eyebrow {
+  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: clamp(20px, 2vw, 30px);
+  letter-spacing: -0.03em;
+  line-height: 0.85;
+  color: rgb(0, 0, 0);
+}
+.work-headline {
+  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: clamp(42px, 6.2vw, 100px);
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+  color: rgb(0, 0, 0);
+  max-width: none;
+}
+.work-headline .serif {
+  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.18em;
+  letter-spacing: -0.045em;
+  color: var(--accent);
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: clamp(16px, 1.8vw, 28px);
+  grid-template-areas:
+    "c1 c1 c1 c1 c2 c2"
+    "c3 c3 c4 c4 c4 c4"
+    "c5 c5 c5 c6 c6 c6";
+}
+
+/* Lego-style staggered assemble for the work cards */
+.work-reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
+.work-grid > * { opacity: 0; }
+@keyframes legoDrop {
+  0%   { opacity: 0; transform: translateY(-58px) scale(0.9); }
+  55%  { opacity: 1; }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.work-reveal.in .work-grid > * {
+  animation: legoDrop 0.7s cubic-bezier(0.34, 1.5, 0.52, 1) both;
+}
+.work-reveal.in .work-grid > *:nth-child(1) { animation-delay: 0.04s; }
+.work-reveal.in .work-grid > *:nth-child(2) { animation-delay: 0.13s; }
+.work-reveal.in .work-grid > *:nth-child(3) { animation-delay: 0.10s; }
+.work-reveal.in .work-grid > *:nth-child(4) { animation-delay: 0.20s; }
+.work-reveal.in .work-grid > *:nth-child(5) { animation-delay: 0.27s; }
+.work-reveal.in .work-grid > *:nth-child(6) { animation-delay: 0.34s; }
+.work-reveal.in .work-grid > *:nth-child(7) { animation-delay: 0.40s; }
+@media (prefers-reduced-motion: reduce) {
+  .work-grid > * { opacity: 1; }
+  .work-reveal.in .work-grid > * { animation: none; }
+}
+
+/* Image cards */
+.work-card {
+  position: relative;
+  height: var(--card-h);
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: none;
+  text-align: left;
+  display: block;
+  padding: 0;
+  background: var(--bg-elev-2);
+}
+.work-card-media { position: absolute; inset: 0; }
+.work-card-media .photo { width: 100%; height: 100%; }
+.work-card-media img {
+  transition: transform 0.7s cubic-bezier(0.22, 0.68, 0, 1);
+}
+.work-card:hover .work-card-media img { transform: scale(1.06) translateY(-4px); }
+
+/* Second image — diagonal wipe reveal on hover */
+.work-card-media-2 {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  /* hidden: degenerate triangle at bottom-left (3 vertices) */
+  clip-path: polygon(0% 100%, 0% 100%, 0% 100%);
+  transition: clip-path 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: clip-path;
+}
+.work-card.cursor-active .work-card-media-2,
+.work-card:hover .work-card-media-2 {
+  /* revealed: oversized triangle whose hypotenuse is a "/" diagonal
+     sweeping from bottom-left toward top-right, covering the whole card */
+  clip-path: polygon(0% 100%, 220% 100%, 0% -120%);
+}
+.work-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(16,17,19,0.7) 0%, rgba(16,17,19,0.1) 45%, rgba(16,17,19,0.05) 100%);
+  opacity: 0.65;
+  transition: opacity 0.45s ease;
+  z-index: 2;
+}
+.work-card:hover .work-overlay { opacity: 0.85; }
+
+.work-pill {
+  position: absolute;
+  top: 0; left: 0;
+  z-index: 4;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--on-accent);
+  box-shadow: 0 12px 30px -10px rgba(16,17,19,0.5);
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: width 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.22s,
+              height 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.22s,
+              opacity 0.3s ease;
+  white-space: nowrap;
+  will-change: transform, width, opacity;
+}
+.work-pill-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: -0.045em;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+}
+.work-pill-label .arrow { transition: transform 0.4s var(--ease-out-expo); }
+.work-card.cursor-active .work-pill {
+  opacity: 1;
+  width: 210px;
+  height: 58px;
+}
+.work-card.cursor-active .work-pill-label {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease 0.6s, transform 0.4s ease 0.6s;
+}
+
+.work-moon {
+  position: absolute;
+  bottom: 22px; right: 24px;
+  width: 20px; height: 10px;
+  border-radius: 0 0 20px 20px;
+  background: #F5F5F2;
+  z-index: 4;
+  pointer-events: none;
+  transform: rotate(0deg);
+  transform-origin: center;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.work-card.cursor-active .work-moon,
+.work-card:hover .work-moon { transform: rotate(90deg); }
+
+.work-text {
+  position: absolute;
+  bottom: 22px; left: 24px; right: 56px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #F5F5F2;
+}
+.work-kicker {
+  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 2px;
+}
+.work-title {
+  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: clamp(16px, 1.4vw, 19px);
+  letter-spacing: -0.01em;
+  text-transform: lowercase;
+  line-height: 1.1;
+}
+.work-sub {
+  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: -0.01em;
+  text-transform: lowercase;
+  line-height: 1.35;
+  color: rgba(245,245,242,0.82);
+  max-width: 42ch;
+}
+
+/* Statement (no card) */
+.work-notes {
+  height: auto;
+  min-height: 420px;
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: clamp(16px, 2vw, 28px) 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.work-statement {
+  font-family: "HelveticaNeueCyr", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: clamp(40px, 5.4vw, 88px);
+  line-height: 0.85;
+  letter-spacing: -0.045em;
+  color: var(--fg);
+}
+.work-statement em { font-style: normal; font-weight: 300; color: var(--accent); }
+.work-notes-title {
+  font-family: "Inter", "Inter Fallback", system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(18px, 1.5vw, 22px);
+  letter-spacing: -0.05em;
+  color: var(--fg);
+}
+.work-notes-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 1.7vw, 22px);
+}
+.work-notes-list li {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.work-note-thumb {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.work-note-thumb img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.work-note-text {
+  font-family: "Inter", "Inter Fallback", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.32;
+  letter-spacing: -0.04em;
+  color: var(--fg-muted);
+}
+.work-note-text strong { font-weight: 400; color: var(--fg-muted); }
+
+@media (max-width: 900px) {
+  .work-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "c1 c1"
+      "c2 c3"
+      "c4 c4"
+      "c5 c6";
+  }
+  .work-card, .work-notes { height: 360px; }
+  .work-head {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .work-head-left, .work-mark, .work-head-desc {
+    position: static;
+  }
+  .work-mark { order: -1; }
+  .work-head-desc { text-align: left; max-width: 46ch; }
+}
+@media (max-width: 600px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: "c1" "c2" "c3" "c4" "c5" "c6";
+  }
+  .work-card, .work-notes { height: 340px !important; }
+  .work-notes { height: auto !important; }
+}
