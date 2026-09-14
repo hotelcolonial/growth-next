@@ -43,7 +43,7 @@
     "mainImageAlt": "Growth team in commercial operation",
     "ruleLabel": "The Solution",
     "statement": "Growth does more than promotion. We create the right path for <emph>interest to become a booking</emph>, at the moment that matters most.",
-    "paragraph1": "Growth Hotel Solutions acts as a commercial extension of the hotel. It organizes routines, tracks opportunities and lifts from the internal team the burden of selling without a method every day.",
+    "paragraph1": "GrowthDirect Hotel Solutions acts as a commercial extension of the hotel. It organizes routines, tracks opportunities and lifts from the internal team the burden of selling without a method every day.",
     "paragraph2": "The hotel keeps the day-to-day operation running. Growth takes on the commercial consistency that demands focus and continuous follow-through."
   },
   "Metodo": {
@@ -116,7 +116,8 @@
     "metodo": "Method",
     "planos": "Plans",
     "contato": "Contact",
-    "cases": "Cases"
+    "cases": "Cases",
+    "localizacao": "Location"
   },
   "Work": {
     "pill": "See more details",
@@ -149,8 +150,8 @@
     "year": "Year",
     "resultsTitle": "Results",
     "servicesTitle": "Areas of work",
-    "metaTitle": "Cases — Growth Hotel Solutions",
-    "metaDescription": "Real hotel commercial-operation case studies by Growth Hotel Solutions.",
+    "metaTitle": "Cases — GrowthDirect Hotel Solutions",
+    "metaDescription": "Real hotel commercial-operation case studies by GrowthDirect Hotel Solutions.",
     "resultsBefore": "before",
     "resultsAfter": "after",
     "resultsChange": "change"
@@ -169,7 +170,7 @@
     "soonBadge": "coming soon",
     "emptyTitle": "We're preparing the first content.",
     "emptySub": "Soon, articles about revenue, distribution and hotel marketing.",
-    "metaTitle": "Blog — Growth Hotel Solutions",
+    "metaTitle": "Blog — GrowthDirect Hotel Solutions",
     "metaDescription": "Content about revenue, distribution, marketing and sales for hospitality."
   },
   "Meta": {
@@ -186,16 +187,16 @@
     "linkInstagram": "instagram",
     "linkEmail": "e-mail",
     "ctaButton": "schedule diagnosis",
-    "photoAlt": "Growth Hotel Solutions team",
+    "photoAlt": "GrowthDirect Hotel Solutions team",
     "ctaQuote": "Our team will offer the right commercial solution for your hotel.",
-    "ctaQuoteBy": "Growth Hotel Solutions team",
+    "ctaQuoteBy": "GrowthDirect Hotel Solutions team",
     "marqueeRevenue": "Revenue",
     "marqueeDistribuicao": "Distribution",
     "marqueeMarketing": "Marketing",
     "marqueeReservas": "Reservations",
     "marqueePerformance": "Performance",
     "marqueeConteudo": "Content",
-    "logoAlt": "Growth Hotel Solutions",
+    "logoAlt": "GrowthDirect Hotel Solutions",
     "blogLink": "see our blog",
     "langAria": "Language",
     "langLabel": "EN",
@@ -203,9 +204,13 @@
     "scheduleLabel": "schedule diagnosis",
     "topAria": "Back to top",
     "topLabel": "TOP",
-    "copyright": "© {year} Growth Hotel Solutions",
+    "copyright": "© {year} GrowthDirect Hotel Solutions",
     "privacy": "Privacy Policy",
-    "location": "Hospitality · Brazil"
+    "location": "Hospitality · Brazil",
+    "locEyebrow": "where we are",
+    "locTitle": "our office",
+    "address": "Av. Felipe Wandscheer, 3953 - Sala 12 - Panorama, Foz do Iguaçu - PR, 85853-322",
+    "mapTitle": "Map showing GrowthDirect Hotel Solutions in Foz do Iguaçu"
   },
   "Contact": {
     "closeLabel": "Close",
@@ -242,11 +247,11 @@
   },
   "Privacy": {
     "metaTitle": "Privacy Policy",
-    "metaDescription": "How Growth Hotel Solutions handles the personal data collected on this site, under Brazil’s LGPD (Law No. 13,709/2018).",
+    "metaDescription": "How GrowthDirect Hotel Solutions handles the personal data collected on this site, under Brazil’s LGPD (Law No. 13,709/2018).",
     "eyebrow": "privacy",
     "title": "Privacy Policy",
     "lastUpdated": "Last updated: September 13, 2026",
-    "intro": "Growth Hotel Solutions provides outsourced commercial operations for hotels in Brazil. This policy explains, plainly, what personal data we process on this site, what we use it for, and what your rights are under Brazil’s General Data Protection Law (Law No. 13,709/2018 — LGPD).",
+    "intro": "GrowthDirect Hotel Solutions provides outsourced commercial operations for hotels in Brazil. This policy explains, plainly, what personal data we process on this site, what we use it for, and what your rights are under Brazil’s General Data Protection Law (Law No. 13,709/2018 — LGPD).",
     "s1Title": "What data we collect",
     "s1Intro": "This site collects personal data at a single point: the “let’s talk” contact form. The data is what you enter yourself:",
     "s1Items": [
@@ -265,7 +270,7 @@
     "s5Title": "How long we keep it",
     "s5Body": "We keep form data for as long as needed to handle your enquiry and, where a commercial relationship exists, for the period required by applicable law. You may request deletion at any time via the e-mail below.",
     "s6Title": "Security",
-    "s6Body": "The form is submitted over an encrypted connection (HTTPS) and processed on the server, not in the browser. Access to the sheet where data is recorded is restricted to the Growth Hotel Solutions team. No system is infallible, but we apply reasonable measures proportionate to the volume and nature of the data processed.",
+    "s6Body": "The form is submitted over an encrypted connection (HTTPS) and processed on the server, not in the browser. Access to the sheet where data is recorded is restricted to the GrowthDirect Hotel Solutions team. No system is infallible, but we apply reasonable measures proportionate to the volume and nature of the data processed.",
     "s7Title": "Cookies and analytics",
     "s7Body": "This site does not currently use analytics cookies or audience measurement tools. We may adopt Google Analytics or an equivalent solution to understand how the site is used and improve it. If that happens, this policy will be updated and, where required, a cookie notice with the option to decline will be shown.",
     "s8Title": "Your rights as a data subject",

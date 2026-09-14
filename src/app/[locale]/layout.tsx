@@ -4,7 +4,7 @@ import {notFound} from 'next/navigation';
 import {NextIntlClientProvider, hasLocale} from 'next-intl';
 import {setRequestLocale} from 'next-intl/server';
 import {routing} from '@/i18n/routing';
-import {robotsMeta, SITE_URL} from '@/lib/seo';
+import {robotsMeta, SITE_URL, BRAND} from '@/lib/seo';
 import {helvetica, inter} from '../fonts';
 import '../globals.css';
 import CustomCursor from '@/components/fx/CustomCursor';
@@ -23,8 +23,8 @@ export function generateStaticParams() {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    template: '%s — Growth Hotel Solutions',
-    default: 'Growth Hotel Solutions — Terceirização comercial para hotéis'
+    template: `%s — ${BRAND}`,
+    default: `${BRAND} — Terceirização comercial para hotéis`
   },
   robots: robotsMeta
 };

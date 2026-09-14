@@ -60,6 +60,7 @@ export default function Header() {
     {to: '/#servicos', label: t('servicos')},
     {to: '/#metodo', label: t('metodo')},
     {to: '/#planos', label: t('planos')},
+    {to: '/#localizacao', label: t('localizacao')},
     {label: t('contato'), action: openContact}
   ];
 
@@ -97,12 +98,15 @@ export default function Header() {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo-growth-transparente.webp"
-              alt="Growth Hotel Solutions"
+              src="/logo-growthdirect.webp"
+              alt="GrowthDirect Hotel Solutions"
               style={{
                 display: 'block',
                 flexShrink: 0,
-                height: 'clamp(34px, 4vw, 46px)',
+                // El PNG nuevo va recortado a la marca (el anterior traia un
+                // 39% de aire transparente). Estos valores dejan la marca
+                // VISIBLE en los mismos ~21-28px de antes.
+                height: 'clamp(21px, 2.4vw, 28px)',
                 width: 'auto'
               }}
             />

@@ -8,12 +8,16 @@ export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3
 // Indexing switch. Only 'true' allows indexing; anything else => noindex.
 export const ALLOW_INDEXING = process.env.NEXT_PUBLIC_ALLOW_INDEXING === 'true';
 
-const BRAND = 'Growth Hotel Solutions';
+// Nombre formal de la marca. Fuente UNICA: layout.tsx y page.tsx lo importan
+// de aqui en vez de repetir el literal, de modo que un futuro cambio de marca
+// se haga en un solo sitio. No cubre los usos coloquiales («Growth» a secas),
+// que viven en messages/*.json porque dependen del idioma.
+export const BRAND = 'GrowthDirect Hotel Solutions';
 // Logo de marca en PNG. Ya NO es la imagen Open Graph —de eso se encargan los
 // opengraph-image.tsx con next/og—; su unico papel ahora es el `logo` de los
 // datos estructurados JSON-LD, donde Google recomienda un formato clasico.
 // El generador de OG usa su propia copia en assets/og/logo.png.
-const BRAND_LOGO = '/logo-growth-transparente.png';
+const BRAND_LOGO = '/logo-growthdirect.png';
 
 const OG_LOCALES: Record<string, string> = {pt: 'pt_BR', es: 'es_ES', en: 'en_US'};
 const BCP47: Record<string, string> = {pt: 'pt-BR', es: 'es', en: 'en'};
@@ -40,7 +44,7 @@ const absUrl = (img: string) => (img.startsWith('http') ? img : `${SITE_URL}${im
 export function buildPageMetadata(opts: {
   locale: string;
   path: string; // path WITHOUT the locale prefix, e.g. '' | '/blog' | '/blog/foo' | '/cases/foo'
-  title: string; // page-specific part; the layout template appends " — Growth Hotel Solutions"
+  title: string; // page-specific part; the layout template appends " — GrowthDirect Hotel Solutions"
   description: string;
   type?: 'website' | 'article';
 }): Metadata {
@@ -84,6 +88,16 @@ export function organizationJsonLd() {
       'Terceirização comercial para hotéis: revenue, distribuição, conteúdo, performance e central de reservas.',
     knowsLanguage: ['pt-BR', 'es', 'en'],
     areaServed: {'@type': 'Country', name: 'Brasil'},
+    // Direccion real del escritorio. Ayuda al SEO local y es el mismo dato que
+    // muestra el mapa del footer.
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Av. Felipe Wandscheer, 3953 - Sala 12',
+      addressLocality: 'Foz do Iguaçu',
+      addressRegion: 'PR',
+      postalCode: '85853-322',
+      addressCountry: 'BR'
+    },
     // Sin `sameAs`: solo tendria sentido con perfiles sociales reales, y hoy
     // no existe ninguno (el icono de Instagram es un placeholder).
     contactPoint: {

@@ -29,7 +29,7 @@ export default function Loader() {
       </svg>
       <div className="loader-logo">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/logo-growth-transparente.webp" alt="" />
+        <img src="/logo-growthdirect.webp" alt="" />
       </div>
     </div>
   );

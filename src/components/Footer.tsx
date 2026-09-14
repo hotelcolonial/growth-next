@@ -143,6 +143,32 @@ export default function Footer() {
           ))}
         </div>
       </div>
+      {/*
+        Localizacion: va entre el marquee y el bloque final del footer, con su
+        propia banda. El id permite enlazarla desde el menu (/{locale}#localizacao).
+        El iframe de Google es lazy: no penaliza la carga inicial.
+      */}
+      <section id="localizacao" className="loc-section" aria-labelledby="loc-title">
+        <div className="container loc-grid">
+          <div className="loc-text">
+            <p className="eyebrow">{t('locEyebrow')}</p>
+            <h2 id="loc-title" className="loc-title">
+              {t('locTitle')}
+            </h2>
+            <address className="loc-address">{t('address')}</address>
+          </div>
+          <div className="loc-map">
+            <iframe
+              title={t('mapTitle')}
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.6812424650025!2d-54.5484388!3d-25.548992700000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f69144a9aa9c17%3A0xff8451e914cf52d6!2sGrowthDirect%20Hotel%20Solutions!5e0!3m2!1spt-BR!2sbr!4v1789387228421!5m2!1spt-BR!2sbr"
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          </div>
+        </div>
+      </section>
+
       <div
         className="container"
         style={{padding: 'clamp(48px, 6vw, 84px) var(--gutter) clamp(28px, 3vw, 40px)'}}
@@ -151,7 +177,7 @@ export default function Footer() {
           <div className="footer-left">
             <LocaleLink href="/" className="footer-logo">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo-growth-transparente.webp" alt={t('logoAlt')} />
+              <img src="/logo-growthdirect.webp" alt={t('logoAlt')} />
             </LocaleLink>
             <LocaleLink href="/blog" className="footer-blog" data-hover>
               {t('blogLink')}{' '}

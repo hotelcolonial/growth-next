@@ -29,7 +29,7 @@ html,body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font
 html{scroll-behavior:smooth;}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
 /* El header es fixed: sin este margen el ancla dejaria el titulo debajo de el. */
-#servicos,#metodo,#planos{scroll-margin-top:clamp(90px,11vh,130px);}
+#servicos,#metodo,#planos,#localizacao{scroll-margin-top:clamp(90px,11vh,130px);}
 body{cursor:none;}
 @media(hover:none){body{cursor:auto;}#cursor{display:none!important;}}
 a{color:inherit;text-decoration:none;}
@@ -45,7 +45,8 @@ button{background:none;border:none;color:inherit;font:inherit;cursor:none;}
 #loader{position:fixed;inset:0;z-index:10000;overflow:hidden;pointer-events:none;animation:loaderDismiss .95s linear forwards;}
 @keyframes loaderDismiss{0%,92%{opacity:1;visibility:visible;}100%{opacity:0;visibility:hidden;}}
 #loader .loader-wave{position:absolute;inset:0;width:100%;height:100%;display:block;}
-#loader .loader-logo{position:absolute;top:50%;left:50%;width:clamp(200px,28vw,380px);opacity:0;transform:translate(-50%,-50%) scale(.94);animation:logoCycle .8s cubic-bezier(0.33,1,0.68,1) .04s;}
+/* Ancho de la marca visible: el logo nuevo no lleva aire alrededor. */
+#loader .loader-logo{position:absolute;top:50%;left:50%;width:clamp(170px,23vw,300px);opacity:0;transform:translate(-50%,-50%) scale(.94);animation:logoCycle .8s cubic-bezier(0.33,1,0.68,1) .04s;}
 #loader .loader-logo img{width:100%;height:auto;display:block;}
 @keyframes logoCycle{0%{opacity:0;transform:translate(-50%,-50%) scale(.94);}32%{opacity:1;transform:translate(-50%,-50%) scale(1);}60%{opacity:1;transform:translate(-50%,-50%) scale(1);}100%{opacity:0;transform:translate(-50%,-50%) scale(1.03);}}
 /* Ya visto en esta sesion. El servidor emite data-loader-seen="0" y el script

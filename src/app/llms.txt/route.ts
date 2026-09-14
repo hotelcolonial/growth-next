@@ -29,7 +29,7 @@ export function GET() {
 
   secciones.push(
     nl([
-      '# Growth Hotel Solutions',
+      '# GrowthDirect Hotel Solutions',
       '',
       '> Terceirização comercial para hotéis no Brasil. Assumimos a operação',
       '> comercial completa do hotel — revenue management, distribuição,',

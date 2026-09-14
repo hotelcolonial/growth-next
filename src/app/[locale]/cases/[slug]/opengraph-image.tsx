@@ -9,7 +9,7 @@ import {OG_SIZE, OG_CONTENT_TYPE, cargarRecursos, TarjetaOG} from '@/lib/og';
 
 export const size = OG_SIZE;
 export const contentType = OG_CONTENT_TYPE;
-export const alt = 'Growth Hotel Solutions';
+export const alt = 'GrowthDirect Hotel Solutions';
 
 export function generateStaticParams() {
   const slugs = getCaseSlugs();

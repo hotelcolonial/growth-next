@@ -43,7 +43,7 @@
     "mainImageAlt": "Equipe Growth em operação comercial",
     "ruleLabel": "A Solução",
     "statement": "A Growth não faz só divulgação. Criamos o caminho certo para o <emph>interesse virar reserva</emph>, no momento em que mais importa.",
-    "paragraph1": "A Growth Hotel Solutions atua como uma extensão comercial do hotel. Organiza rotinas, acompanha oportunidades e tira da equipe interna o peso de vender sem método todos os dias.",
+    "paragraph1": "A GrowthDirect Hotel Solutions atua como uma extensão comercial do hotel. Organiza rotinas, acompanha oportunidades e tira da equipe interna o peso de vender sem método todos os dias.",
     "paragraph2": "O hotel mantém a operação do dia a dia. A Growth assume a constância comercial que exige foco e acompanhamento contínuo."
   },
   "Metodo": {
@@ -116,7 +116,8 @@
     "metodo": "Método",
     "planos": "Planos",
     "contato": "Contato",
-    "cases": "Cases"
+    "cases": "Cases",
+    "localizacao": "Localização"
   },
   "Work": {
     "pill": "Ver mais detalhes",
@@ -149,8 +150,8 @@
     "year": "Ano",
     "resultsTitle": "Resultados",
     "servicesTitle": "Frentes de atuação",
-    "metaTitle": "Cases — Growth Hotel Solutions",
-    "metaDescription": "Casos reais de operação comercial hoteleira pela Growth Hotel Solutions.",
+    "metaTitle": "Cases — GrowthDirect Hotel Solutions",
+    "metaDescription": "Casos reais de operação comercial hoteleira pela GrowthDirect Hotel Solutions.",
     "resultsBefore": "antes",
     "resultsAfter": "depois",
     "resultsChange": "variação"
@@ -169,7 +170,7 @@
     "soonBadge": "em breve",
     "emptyTitle": "Estamos preparando os primeiros conteúdos.",
     "emptySub": "Em breve, artigos sobre revenue, distribuição e marketing hoteleiro.",
-    "metaTitle": "Blog — Growth Hotel Solutions",
+    "metaTitle": "Blog — GrowthDirect Hotel Solutions",
     "metaDescription": "Conteúdo sobre revenue, distribuição, marketing e vendas para hotelaria."
   },
   "Meta": {
@@ -186,16 +187,16 @@
     "linkInstagram": "instagram",
     "linkEmail": "e-mail",
     "ctaButton": "agendar diagnóstico",
-    "photoAlt": "Equipe Growth Hotel Solutions",
+    "photoAlt": "Equipe GrowthDirect Hotel Solutions",
     "ctaQuote": "Nossa equipe vai oferecer a solução comercial certa para o seu hotel.",
-    "ctaQuoteBy": "Equipe Growth Hotel Solutions",
+    "ctaQuoteBy": "Equipe GrowthDirect Hotel Solutions",
     "marqueeRevenue": "Revenue",
     "marqueeDistribuicao": "Distribuição",
     "marqueeMarketing": "Marketing",
     "marqueeReservas": "Reservas",
     "marqueePerformance": "Performance",
     "marqueeConteudo": "Conteúdo",
-    "logoAlt": "Growth Hotel Solutions",
+    "logoAlt": "GrowthDirect Hotel Solutions",
     "blogLink": "veja nosso blog",
     "langAria": "Idioma",
     "langLabel": "PT",
@@ -203,9 +204,13 @@
     "scheduleLabel": "agendar diagnóstico",
     "topAria": "Voltar ao topo",
     "topLabel": "TOPO",
-    "copyright": "© {year} Growth Hotel Solutions",
+    "copyright": "© {year} GrowthDirect Hotel Solutions",
     "privacy": "Política de Privacidade",
-    "location": "Hotelaria · Brasil"
+    "location": "Hotelaria · Brasil",
+    "locEyebrow": "onde estamos",
+    "locTitle": "nosso escritório",
+    "address": "Av. Felipe Wandscheer, 3953 - Sala 12 - Panorama, Foz do Iguaçu - PR, 85853-322",
+    "mapTitle": "Mapa da localização da GrowthDirect Hotel Solutions em Foz do Iguaçu"
   },
   "Contact": {
     "closeLabel": "Fechar",
@@ -242,11 +247,11 @@
   },
   "Privacy": {
     "metaTitle": "Política de Privacidade",
-    "metaDescription": "Como a Growth Hotel Solutions trata os dados pessoais coletados neste site, com base na LGPD (Lei nº 13.709/2018).",
+    "metaDescription": "Como a GrowthDirect Hotel Solutions trata os dados pessoais coletados neste site, com base na LGPD (Lei nº 13.709/2018).",
     "eyebrow": "privacidade",
     "title": "Política de Privacidade",
     "lastUpdated": "Última atualização: 13 de setembro de 2026",
-    "intro": "A Growth Hotel Solutions atua com terceirização comercial para hotéis no Brasil. Esta política explica, de forma direta, quais dados pessoais tratamos neste site, para que os usamos e quais são os seus direitos segundo a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).",
+    "intro": "A GrowthDirect Hotel Solutions atua com terceirização comercial para hotéis no Brasil. Esta política explica, de forma direta, quais dados pessoais tratamos neste site, para que os usamos e quais são os seus direitos segundo a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).",
     "s1Title": "Quais dados coletamos",
     "s1Intro": "Este site coleta dados pessoais em um único ponto: o formulário de contato «vamos conversar». Os dados são os que você mesmo informa:",
     "s1Items": [
@@ -265,7 +270,7 @@
     "s5Title": "Por quanto tempo guardamos",
     "s5Body": "Mantemos os dados do formulário pelo tempo necessário para atender ao seu contato e, havendo relação comercial, pelo prazo exigido pela legislação aplicável. Você pode solicitar a exclusão a qualquer momento pelo e-mail indicado abaixo.",
     "s6Title": "Segurança",
-    "s6Body": "O envio do formulário é feito por conexão criptografada (HTTPS) e processado no servidor, não no navegador. O acesso à planilha onde os dados são registrados é restrito à equipe da Growth Hotel Solutions. Nenhum sistema é infalível, mas adotamos medidas razoáveis e compatíveis com o volume e a natureza dos dados tratados.",
+    "s6Body": "O envio do formulário é feito por conexão criptografada (HTTPS) e processado no servidor, não no navegador. O acesso à planilha onde os dados são registrados é restrito à equipe da GrowthDirect Hotel Solutions. Nenhum sistema é infalível, mas adotamos medidas razoáveis e compatíveis com o volume e a natureza dos dados tratados.",
     "s7Title": "Cookies e análise de audiência",
     "s7Body": "Hoje este site não utiliza cookies de análise nem ferramentas de medição de audiência. Podemos vir a utilizar o Google Analytics ou solução equivalente para entender como o site é usado e melhorá-lo. Se isso acontecer, esta política será atualizada e, quando exigido, será apresentado um aviso de cookies com a possibilidade de recusa.",
     "s8Title": "Seus direitos como titular",

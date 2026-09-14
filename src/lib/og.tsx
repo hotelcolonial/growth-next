@@ -96,7 +96,7 @@ export function TarjetaOG({
         }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={logoSrc} alt="" width={260} height={87} style={{marginBottom: 44}} />
+        <img src={logoSrc} alt="" width={264} height={58} style={{marginBottom: 44}} />
 
         {etiqueta ? (
           <div
