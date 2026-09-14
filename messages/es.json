@@ -150,7 +150,10 @@
     "resultsTitle": "Resultados",
     "servicesTitle": "Frentes de actuación",
     "metaTitle": "Cases — Growth Hotel Solutions",
-    "metaDescription": "Casos reales de operación comercial hotelera por Growth Hotel Solutions."
+    "metaDescription": "Casos reales de operación comercial hotelera por Growth Hotel Solutions.",
+    "resultsBefore": "antes",
+    "resultsAfter": "después",
+    "resultsChange": "variación"
   },
   "Blog": {
     "listTitle": "blog",

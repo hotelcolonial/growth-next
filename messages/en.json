@@ -150,7 +150,10 @@
     "resultsTitle": "Results",
     "servicesTitle": "Areas of work",
     "metaTitle": "Cases — Growth Hotel Solutions",
-    "metaDescription": "Real hotel commercial-operation case studies by Growth Hotel Solutions."
+    "metaDescription": "Real hotel commercial-operation case studies by Growth Hotel Solutions.",
+    "resultsBefore": "before",
+    "resultsAfter": "after",
+    "resultsChange": "change"
   },
   "Blog": {
     "listTitle": "blog",

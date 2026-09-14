@@ -57,7 +57,11 @@ export default async function CaseDetailPage({
               description: f.description,
               image: f.coverImage,
               datePublished: f.date,
-              type: 'Article'
+              type: 'Article',
+              // Las mismas cifras que muestra el bloque de resultados, para
+              // que tambien viajen en los datos estructurados.
+              results: f.results,
+              about: f.client
             })
           )
         }}
@@ -92,6 +96,38 @@ export default async function CaseDetailPage({
           </div>
         </Reveal>
       </section>
+
+      {/*
+        Bloque de resultados en TEXTO. Las mismas cifras estan dentro del
+        grafico SVG del slider de abajo, pero de ahi los motores de IA las
+        extraen mal. Aqui van como texto plano y con marcado semantico (<dl>),
+        que es lo que leen tanto los crawlers como los lectores de pantalla.
+        No sustituye a nada visual: el grafico y el slider siguen intactos.
+      */}
+      {f.results && f.results.length > 0 && (
+        <section className="container case-results" aria-labelledby="case-results-title">
+          <h2 id="case-results-title" className="case-results-title">
+            {t('resultsTitle')}
+          </h2>
+          <div className="case-results-grid">
+            {f.results.map((r, i) => (
+              <Reveal key={r.label} delay={i * 80}>
+                <figure className="case-result">
+                  <figcaption className="case-result-label">{r.label}</figcaption>
+                  <p className="case-result-change">{r.change}</p>
+                  <dl className="case-result-dl">
+                    <dt>{t('resultsBefore')}</dt>
+                    <dd>{r.before}</dd>
+                    <dt>{t('resultsAfter')}</dt>
+                    <dd>{r.after}</dd>
+                  </dl>
+                  <p className="case-result-period">{r.period}</p>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+      )}
 
       {f.details && f.details.length > 0 && (
         <section className="container case-details">

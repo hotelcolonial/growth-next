@@ -6,6 +6,20 @@ import {routing} from '@/i18n/routing';
 const CASES_DIR = path.join(process.cwd(), 'content', 'cases');
 
 export type CaseMetric = {label: string; value: string};
+
+/**
+ * Resultado medido del case, en campos separados en vez de una frase.
+ * Antes las cifras solo vivian dentro del subtitulo de un grafico SVG, de donde
+ * los motores de IA las extraen mal. Asi se pueden renderizar como texto y
+ * volcar al JSON-LD sin volver a escribirlas.
+ */
+export type CaseResult = {
+  label: string;
+  before: string;
+  after: string;
+  change: string;
+  period: string;
+};
 export type CaseMetaItem = {label: string; value: string};
 export type CaseDetailItem = {label: string; value: string};
 
@@ -43,6 +57,7 @@ export type CaseFrontmatter = {
   coverAlt?: string;
   date: string;
   metrics?: CaseMetric[];
+  results?: CaseResult[];
   meta?: CaseMetaItem[];
   details?: CaseDetailItem[];
   feature?: CaseFeature;

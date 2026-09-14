@@ -82,7 +82,18 @@ export function organizationJsonLd() {
     logo: `${SITE_URL}${BRAND_LOGO}`,
     description:
       'Terceirização comercial para hotéis: revenue, distribuição, conteúdo, performance e central de reservas.',
-    knowsLanguage: ['pt-BR', 'es', 'en']
+    knowsLanguage: ['pt-BR', 'es', 'en'],
+    areaServed: {'@type': 'Country', name: 'Brasil'},
+    // Sin `sameAs`: solo tendria sentido con perfiles sociales reales, y hoy
+    // no existe ninguno (el icono de Instagram es un placeholder).
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      telephone: '0800 819 1993',
+      email: 'contato@growthhotelsolutions.com.br',
+      areaServed: 'BR',
+      availableLanguage: ['pt-BR', 'es', 'en']
+    }
   };
 }
 
@@ -110,13 +121,30 @@ export function articleJsonLd(opts: {
   image?: string;
   datePublished?: string;
   type?: 'Article' | 'CreativeWork';
+  /** Resultados medidos, si el contenido los tiene (cases). */
+  results?: {label: string; before: string; after: string; change: string; period: string}[];
+  /** Cliente del case, para `about`. */
+  about?: string;
 }) {
-  const {locale, url, headline, description, image, datePublished, type = 'Article'} = opts;
+  const {locale, url, headline, description, image, datePublished, type = 'Article', results, about} = opts;
+
+  // Las cifras van al schema como frase en `abstract`. Se usa abstract y no
+  // una propiedad a medida porque Article no admite additionalProperty: meter
+  // ahi un PropertyValue produciria un JSON-LD invalido. Asi queda valido y
+  // los modelos leen el dato igual.
+  const resumen = results?.length
+    ? results
+        .map((r) => `${r.label}: ${r.before} → ${r.after} (${r.change}, ${r.period}).`)
+        .join(' ')
+    : undefined;
+
   return {
     '@context': 'https://schema.org',
     '@type': type,
     headline,
     description,
+    ...(resumen ? {abstract: resumen} : {}),
+    ...(about ? {about: {'@type': 'Organization', name: about}} : {}),
     image: [absUrl(image || BRAND_LOGO)],
     inLanguage: bcp47(locale),
     url,
