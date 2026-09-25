@@ -104,6 +104,20 @@
       "Dedicated account manager"
     ]
   },
+  "Time": {
+    "title": "our team",
+    "intro": "The team behind GrowthDirect. Strategy, technology and commercial execution for hotels.",
+    "cta": "Get in touch",
+    "photoAlt": "Portrait of {name}, {role}",
+    "roles": {
+      "raquel": "Head of Marketing & Technology",
+      "gabriel": "Sales & Customer Care Coordinator",
+      "esther": "Revenue Management & Reservations Coordinator",
+      "wilmary": "Marketing Analyst & Photographer",
+      "leonardo": "Commercial Consultant",
+      "thiago": "Commercial Consultant"
+    }
+  },
   "Nav": {
     "ariaNav": "Main navigation",
     "idioma": "Language",
@@ -115,6 +129,7 @@
     "servicos": "Services",
     "metodo": "Method",
     "planos": "Plans",
+    "time": "Team",
     "contato": "Contact",
     "cases": "Cases",
     "localizacao": "Location"

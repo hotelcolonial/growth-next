@@ -1,0 +1,147 @@
+        .time-section {
+          background: var(--bg);
+          /* Va tras Planos, que ya deja su propio aire abajo. */
+          padding: clamp(24px, 3vw, 48px) 0 clamp(56px, 6vw, 96px);
+        }
+        .time-layout {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+          gap: clamp(14px, 1.6vw, 24px);
+          align-items: stretch;
+        }
+
+        /* ---- Bloque coral ---- */
+        .time-intro {
+          background: #F95738;
+          color: var(--on-accent);
+          border-radius: clamp(20px, 2.2vw, 30px);
+          padding: clamp(28px, 3vw, 48px);
+          position: relative;
+          overflow: hidden;
+        }
+        /* Textura de puntos (el mismo motivo de Solucao) que aparece hacia abajo:
+           da cuerpo al bloque, que en desktop es tan alto como la grilla.
+           Nada de sticky: html/body llevan overflow-x:hidden y eso lo anula. */
+        .time-intro::after {
+          content: "";
+          position: absolute; inset: 0;
+          background-image: radial-gradient(rgba(255, 255, 255, 0.42) 1.4px, transparent 1.4px);
+          background-size: 22px 22px;
+          -webkit-mask-image: linear-gradient(to bottom, transparent 35%, #000 100%);
+          mask-image: linear-gradient(to bottom, transparent 35%, #000 100%);
+          pointer-events: none;
+        }
+        .time-intro-inner {
+          position: relative;
+          z-index: 1;
+          display: flex; flex-direction: column;
+          align-items: flex-start;
+        }
+        .time-intro-icon {
+          display: inline-flex; align-items: center; justify-content: center;
+          width: clamp(48px, 4vw, 60px); height: clamp(48px, 4vw, 60px);
+          border-radius: 50%;
+          border: 1.5px solid rgba(255, 255, 255, 0.55);
+          margin-bottom: clamp(28px, 3.5vw, 56px);
+        }
+        .time-intro-icon svg { width: 52%; height: 52%; }
+        .time-title {
+          font-family: var(--font-sans);
+          font-weight: 300; font-size: clamp(46px, 5vw, 84px);
+          line-height: 0.9; letter-spacing: -0.045em;
+          text-transform: lowercase; color: inherit;
+        }
+        /* Blanco sobre #F95738 solo cumple 3:1 (texto grande): por eso la frase
+           nunca baja de 24px. */
+        .time-intro-text {
+          margin-top: clamp(18px, 2vw, 28px);
+          font-family: var(--font-sans);
+          font-weight: 400; font-size: clamp(24px, 1.9vw, 30px);
+          line-height: 1.2; letter-spacing: -0.035em;
+          max-width: 18ch;
+        }
+        .time-btn {
+          margin-top: clamp(28px, 3.5vw, 48px);
+          display: inline-flex; align-items: center; gap: 12px;
+          background: var(--bg); color: var(--fg);
+          border: 0; border-radius: 999px;
+          padding: 16px 28px;
+          font-family: var(--font-sans);
+          font-weight: 400; font-size: clamp(17px, 1.3vw, 19px); letter-spacing: -0.02em;
+          cursor: pointer;
+          transition: background 0.4s var(--ease-out-cubic), color 0.4s var(--ease-out-cubic);
+        }
+        .time-btn svg { width: 16px; height: 16px; color: #F95738; transition: color 0.4s var(--ease-out-cubic); }
+        .time-btn:hover { background: var(--fg); color: var(--on-dark); }
+        .time-btn:hover svg { color: var(--on-dark); }
+        .time-btn:focus-visible { outline: 2px solid var(--on-accent); outline-offset: 3px; }
+
+        /* ---- Tarjetas ---- */
+        .time-grid {
+          list-style: none; margin: 0; padding: 0;
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: clamp(12px, 1.3vw, 20px);
+        }
+        .time-card {
+          display: flex; flex-direction: column;
+          background: var(--bg);
+          border: 1px solid var(--border);
+          border-radius: clamp(20px, 2.2vw, 30px);
+          padding: clamp(8px, 0.8vw, 12px);
+          box-shadow: 0 10px 30px -22px rgba(16, 17, 19, 0.28);
+          transition: border-color 0.4s ease, box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .time-card:hover {
+          border-color: rgba(249, 87, 56, 0.45);
+          box-shadow: 0 18px 40px -22px rgba(16, 17, 19, 0.35);
+        }
+        .time-photo {
+          position: relative;
+          aspect-ratio: 4 / 5;
+          overflow: hidden;
+          border-radius: clamp(14px, 1.6vw, 22px);
+          background: var(--bg-elev-1);
+        }
+        .time-photo img {
+          width: 100%; height: 100%;
+          object-fit: cover; object-position: center top;
+          display: block;
+          transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .time-card:hover .time-photo img { transform: scale(1.04); }
+        .time-info {
+          display: flex; flex-direction: column;
+          gap: 6px;
+          padding: clamp(14px, 1.4vw, 20px) clamp(10px, 1.1vw, 16px) clamp(10px, 1vw, 14px);
+        }
+        .time-role {
+          font-family: var(--font-sans);
+          font-weight: 400; font-size: clamp(12.5px, 0.9vw, 14px);
+          line-height: 1.3; letter-spacing: -0.02em;
+          color: var(--accent-text);
+        }
+        .time-name {
+          font-family: var(--font-sans);
+          font-weight: 400; font-size: clamp(18px, 1.5vw, 23px);
+          line-height: 1.05; letter-spacing: -0.04em;
+          color: var(--fg);
+        }
+
+        @media (max-width: 1100px) {
+          .time-layout { grid-template-columns: minmax(0, 1fr); }
+          .time-intro::after { display: none; }
+          .time-intro-icon { margin-bottom: 24px; }
+          .time-intro-text { max-width: 26ch; }
+        }
+        @media (max-width: 700px) {
+          .time-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (max-width: 480px) {
+          .time-name { font-size: 18px; }
+          .time-role { font-size: 12.5px; }
+          .time-info { padding: 12px 6px 8px; }
+        }
+        @media (max-width: 340px) {
+          .time-grid { grid-template-columns: minmax(0, 1fr); }
+        }

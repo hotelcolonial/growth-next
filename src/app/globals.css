@@ -29,7 +29,7 @@ html,body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font
 html{scroll-behavior:smooth;}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
 /* El header es fixed: sin este margen el ancla dejaria el titulo debajo de el. */
-#servicos,#metodo,#planos,#localizacao{scroll-margin-top:clamp(90px,11vh,130px);}
+#servicos,#metodo,#planos,#time,#localizacao{scroll-margin-top:clamp(90px,11vh,130px);}
 body{cursor:none;}
 @media(hover:none){body{cursor:auto;}#cursor{display:none!important;}}
 a{color:inherit;text-decoration:none;}

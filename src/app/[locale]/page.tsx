@@ -9,6 +9,7 @@ import NossoTrabalho from '@/components/sections/NossoTrabalho';
 import SolucaoSection from '@/components/sections/SolucaoSection';
 import MetodoSection from '@/components/sections/MetodoSection';
 import PlanosPreviewSection from '@/components/sections/PlanosPreviewSection';
+import TimeSection from '@/components/sections/TimeSection';
 
 export async function generateMetadata({
   params
@@ -47,6 +48,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
       <SolucaoSection />
       <MetodoSection />
       <PlanosPreviewSection />
+      <TimeSection />
     </>
   );
 }

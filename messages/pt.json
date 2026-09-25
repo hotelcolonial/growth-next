@@ -104,6 +104,20 @@
       "Gerente de conta dedicado"
     ]
   },
+  "Time": {
+    "title": "nosso time",
+    "intro": "O time por trás da GrowthDirect. Estratégia, tecnologia e execução comercial para hotéis.",
+    "cta": "Fale com a gente",
+    "photoAlt": "Retrato de {name}, {role}",
+    "roles": {
+      "raquel": "Head de Marketing e Tecnologia",
+      "gabriel": "Coordenador de Vendas e Atendimento",
+      "esther": "Coordenadora de Revenue Management e Reservas",
+      "wilmary": "Analista de Marketing e Fotógrafa",
+      "leonardo": "Consultor Comercial",
+      "thiago": "Consultor Comercial"
+    }
+  },
   "Nav": {
     "ariaNav": "Navegação principal",
     "idioma": "Idioma",
@@ -115,6 +129,7 @@
     "servicos": "Serviços",
     "metodo": "Método",
     "planos": "Planos",
+    "time": "Time",
     "contato": "Contato",
     "cases": "Cases",
     "localizacao": "Localização"

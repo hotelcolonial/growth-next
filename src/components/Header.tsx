@@ -60,6 +60,7 @@ export default function Header() {
     {to: '/#servicos', label: t('servicos')},
     {to: '/#metodo', label: t('metodo')},
     {to: '/#planos', label: t('planos')},
+    {to: '/#time', label: t('time')},
     {to: '/#localizacao', label: t('localizacao')},
     {label: t('contato'), action: openContact}
   ];
