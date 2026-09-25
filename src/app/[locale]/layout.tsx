@@ -1,6 +1,7 @@
 import type {ReactNode} from 'react';
 import type {Metadata} from 'next';
 import {notFound} from 'next/navigation';
+import {GoogleTagManager} from '@next/third-parties/google';
 import {NextIntlClientProvider, hasLocale} from 'next-intl';
 import {setRequestLocale} from 'next-intl/server';
 import {routing} from '@/i18n/routing';
@@ -13,6 +14,12 @@ import Curtain from '@/components/fx/Curtain';
 import ScrollProgress from '@/components/fx/ScrollProgress';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+
+// Google Tag Manager: solo en builds de produccion y con el ID definido, para
+// que `next dev` no ensucie los datos. GA4 y los pixeles (Meta, TikTok, Ads)
+// se configuran DENTRO de GTM: no se cargan aparte en el codigo.
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
+const LOAD_GTM = process.env.NODE_ENV === 'production' && Boolean(GTM_ID);
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
@@ -89,6 +96,7 @@ export default async function LocaleLayout({
           }}
         />
       </head>
+      {LOAD_GTM && <GoogleTagManager gtmId={GTM_ID!} />}
       <body>
         <NextIntlClientProvider>
           <Loader />
