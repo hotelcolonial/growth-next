@@ -7,6 +7,12 @@ import './HeroFeature.css';
 // Es una constante de modulo, no una rama dentro del render.
 const useIsoLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
+const FILM = {
+  desktop: '/assets/video/growthdirect-brand-film.mp4',
+  mobile: '/assets/video/growthdirect-brand-film-720.mp4',
+  poster: '/assets/video/growthdirect-brand-film-poster.webp'
+};
+
 export default function HeroFeature() {
   const placeholderRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
@@ -78,20 +84,15 @@ export default function HeroFeature() {
     <section className="hero-feature-section">
       <div ref={placeholderRef} className="hero-feature-placeholder" />
       <div ref={innerRef} className="hero-feature-frame" aria-hidden="true">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          poster="https://images.pexels.com/videos/7966582/achievement-business-computer-contemporary-7966582.jpeg?auto=compress&cs=tinysrgb&h=720&fit=crop&w=1280"
-          src="https://videos.pexels.com/video-files/7966582/7966582-uhd_2560_1440_25fps.mp4"
-        />
+        {/* Brand film propio, recomprimido desde _originals/video (64 MB).
+            El movil (donde el marco mide ~350px) baja la version 720p; los
+            navegadores sin soporte de `media` en <source> toman la primera. */}
+        <video autoPlay loop muted playsInline preload="auto" poster={FILM.poster}>
+          <source src={FILM.mobile} type="video/mp4" media="(max-width: 700px)" />
+          <source src={FILM.desktop} type="video/mp4" />
+        </video>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="https://images.pexels.com/videos/7966582/achievement-business-computer-contemporary-7966582.jpeg?auto=compress&cs=tinysrgb&h=720&fit=crop&w=1280"
-          alt=""
-        />
+        <img src={FILM.poster} alt="" />
       </div>
     </section>
   );
