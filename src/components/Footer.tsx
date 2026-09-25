@@ -116,7 +116,7 @@ export default function Footer() {
               <div className="cta-photo">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&q=80&auto=format&fit=crop"
+                  src="/assets/equipe-growthdirect-revenue-reservas-escritorio.webp"
                   alt={t('photoAlt')}
                   loading="lazy"
                 />

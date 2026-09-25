@@ -5,7 +5,7 @@ import Reveal from '@/components/Reveal';
 import './SolucaoSection.css';
 
 const SOL_IMG = {
-  main: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1400&q=80&auto=format&fit=crop',
+  main: '/assets/equipe-growthdirect-atendimento-vendas-escritorio.webp',
   sec: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80&auto=format&fit=crop'
 };
 
