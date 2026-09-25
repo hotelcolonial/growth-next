@@ -1,5 +1,4 @@
 import localFont from 'next/font/local';
-import {Inter} from 'next/font/google';
 
 // Fuentes del sitio, cargadas con next/font: se auto-hospedan (sin viaje a
 // Google), se precargan solas y Next inyecta los @font-face con la estrategia
@@ -27,10 +26,17 @@ export const helvetica = localFont({
 /**
  * Inter — solo los pesos que algun elemento usa de verdad (400, 600, 700).
  * Antes se pedian siete (300, 400, 500, 600, 700, 800, 900).
+ *
+ * Auto-hospedada con next/font/local: next/font/google la descargaba de
+ * Google DURANTE el build y en Hostinger esa descarga fallaba y tumbaba el
+ * build entero. El archivo es exactamente el que servia Google (subset latin,
+ * cubre pt/es/en): una fuente variable (eje wght 100-900) de la que un solo
+ * archivo da los tres pesos, asi que se declara como rango.
  */
-export const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '600', '700'],
+export const inter = localFont({
+  src: './fonts/Inter-Latin-Variable.woff2',
+  weight: '400 700',
+  style: 'normal',
   display: 'swap',
   variable: '--font-inter',
   fallback: ['system-ui', 'sans-serif']
